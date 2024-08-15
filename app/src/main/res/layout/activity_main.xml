@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/primary"
+        tools:context=".views.MainActivity">
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sucata Control"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_margin="25dp"
+            />
+    <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp">
+
+        <TextView
+                android:id="@+id/texDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="descrição"
+                android:textSize="20dp"
+                android:padding="10dp"
+                />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp">
+
+        <TextView
+                android:id="@+id/texRecursos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="recursos"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                />
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnComecar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Começar"
+            android:textSize="18dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/primary"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/Widget.MaterialComponents.Button"
+            />
+
+</LinearLayout>
