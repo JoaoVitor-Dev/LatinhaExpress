@@ -61,6 +61,14 @@
                     android:backgroundTint="@color/primary"
                     />
 
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cadastrar-se"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    />
+
 
         </LinearLayout>
 
