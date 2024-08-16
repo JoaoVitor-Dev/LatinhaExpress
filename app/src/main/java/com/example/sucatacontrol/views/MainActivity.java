@@ -16,6 +16,9 @@ import com.example.sucatacontrol.R;
 import com.example.sucatacontrol.dao.AllDao;
 import com.example.sucatacontrol.database.MyDatabase;
 import com.example.sucatacontrol.entities.Sobre;
+import com.example.sucatacontrol.entities.Usuario;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                startActivity(new Intent(MainActivity.this, CadastroUsuarioActivity.class));
+                LoginOuCadastro();
             }
         });
     }
@@ -79,5 +82,18 @@ public class MainActivity extends AppCompatActivity
         s.recursos = "É utilizado banco de dados SQLite para persistência de informações, componentes de UI como ActionBar, ProgressBar e CardView, além de Fragments e Activities. ";
 
         allDao.insert_sobre(s);
+    }
+
+    private void LoginOuCadastro()
+    {
+        List<Usuario> usuarioList = allDao.usuarios();
+
+        if(usuarioList.size() > 0)
+        {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }else
+        {
+            startActivity(new Intent(MainActivity.this, CadastroUsuarioActivity.class));
+        }
     }
 }

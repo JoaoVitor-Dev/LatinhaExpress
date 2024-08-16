@@ -77,6 +77,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity
             allDao.insert_usuario(usuario);
 
             Toast.makeText(this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
+
+            startActivity(new Intent(CadastroUsuarioActivity.this, MenuActivity.class));
         }
     }
 }
