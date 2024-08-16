@@ -67,18 +67,28 @@ public class CadastroUsuarioActivity extends AppCompatActivity
         if (nome.equals(""))
         {
             Toast.makeText(this, "Por favor, informe o nome!", Toast.LENGTH_SHORT).show();
-        } else if (senha.equals(""))
+            edtNome.requestFocus();
+            return;
+        }
+
+        if (senha.equals(""))
         {
             Toast.makeText(this, "Por favor, informe a senha!", Toast.LENGTH_SHORT).show();
-        }else
-        {
-            Usuario usuario = new Usuario(nome, senha);
-
-            allDao.insert_usuario(usuario);
-
-            Toast.makeText(this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
-
-            startActivity(new Intent(CadastroUsuarioActivity.this, MenuActivity.class));
+            edtSenha.requestFocus();
+            return;
         }
+
+        Usuario usuario = new Usuario(nome, senha);
+
+        allDao.insert_usuario(usuario);
+
+        Toast.makeText(this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
+
+        Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
+
+        it.putExtra("nome_usuario", nome);
+
+        startActivity(it);
+
     }
 }

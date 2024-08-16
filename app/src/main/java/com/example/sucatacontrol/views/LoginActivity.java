@@ -82,12 +82,14 @@ public class LoginActivity extends AppCompatActivity
         if(nome.equals(""))
         {
             Toast.makeText(this, "Por favor, informe o nome!", Toast.LENGTH_SHORT).show();
+            edtNome.requestFocus();
             return;
         }
 
         if(senha.equals(""))
         {
             Toast.makeText(this, "Por favor, informe o nome!", Toast.LENGTH_SHORT).show();
+            edtSenha.requestFocus();
             return;
         }
 
