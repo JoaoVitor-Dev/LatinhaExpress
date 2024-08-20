@@ -62,6 +62,9 @@ public class LoginActivity extends AppCompatActivity
 
     private void setup()
     {
+        TextView text_toolbar = findViewById(R.id.text_toolbar);
+        text_toolbar.setText("Login");
+
         btnAcessar = findViewById(R.id.btnAcessar);
         edtNome = findViewById(R.id.edtNome);
         edtSenha = findViewById(R.id.edtSenha);

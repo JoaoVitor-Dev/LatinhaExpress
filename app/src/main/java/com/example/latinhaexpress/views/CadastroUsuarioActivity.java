@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +49,9 @@ public class CadastroUsuarioActivity extends AppCompatActivity
 
     private void setup()
     {
+        TextView text_toolbar = findViewById(R.id.text_toolbar);
+        text_toolbar.setText("Cadastro de usuário");
+
         btnCadastrar = findViewById(R.id.btnCadastrar);
         edtNome = findViewById(R.id.edtNome);
         edtSenha = findViewById(R.id.edtSenha);
