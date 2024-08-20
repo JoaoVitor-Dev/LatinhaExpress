@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Sucata Control"
+            android:text="Latinha Express"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="25dp"

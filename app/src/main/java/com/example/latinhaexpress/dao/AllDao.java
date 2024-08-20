@@ -1,9 +1,9 @@
-package com.example.sucatacontrol.dao;
+package com.example.latinhaexpress.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
-import com.example.sucatacontrol.entities.*;
+import com.example.latinhaexpress.entities.*;
 
 import java.util.List;
 

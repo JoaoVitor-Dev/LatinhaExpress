@@ -1,4 +1,4 @@
-package com.example.sucatacontrol.views;
+package com.example.latinhaexpress.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,10 +11,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.room.Room;
-import com.example.sucatacontrol.R;
-import com.example.sucatacontrol.dao.AllDao;
-import com.example.sucatacontrol.database.MyDatabase;
-import com.example.sucatacontrol.entities.Usuario;
+import com.example.latinhaexpress.R;
+import com.example.latinhaexpress.dao.AllDao;
+import com.example.latinhaexpress.database.MyDatabase;
+import com.example.latinhaexpress.entities.Usuario;
 
 public class CadastroUsuarioActivity extends AppCompatActivity
 {

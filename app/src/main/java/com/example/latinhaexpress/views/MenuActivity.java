@@ -1,4 +1,4 @@
-package com.example.sucatacontrol.views;
+package com.example.latinhaexpress.views;
 
 import android.os.Bundle;
 
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import com.example.sucatacontrol.R;
+import com.example.latinhaexpress.R;
 
 public class MenuActivity extends AppCompatActivity
 {

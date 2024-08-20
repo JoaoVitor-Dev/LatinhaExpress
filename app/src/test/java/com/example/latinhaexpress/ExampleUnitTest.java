@@ -1,4 +1,4 @@
-package com.example.sucatacontrol;
+package com.example.latinhaexpress;
 
 import org.junit.Test;
 

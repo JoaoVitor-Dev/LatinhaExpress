@@ -1,4 +1,4 @@
-package com.example.sucatacontrol.entities;
+package com.example.latinhaexpress.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.sucatacontrol"
+    namespace = "com.example.latinhaexpress"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.sucatacontrol"
+        applicationId = "com.example.latinhaexpress"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

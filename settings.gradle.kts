@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SucataControl"
+rootProject.name = "LatinhaExpress"
 include(":app")

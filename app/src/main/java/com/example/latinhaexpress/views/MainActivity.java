@@ -1,4 +1,4 @@
-package com.example.sucatacontrol.views;
+package com.example.latinhaexpress.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +12,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.room.Room;
-import com.example.sucatacontrol.R;
-import com.example.sucatacontrol.dao.AllDao;
-import com.example.sucatacontrol.database.MyDatabase;
-import com.example.sucatacontrol.entities.Sobre;
-import com.example.sucatacontrol.entities.Usuario;
+import com.example.latinhaexpress.R;
+import com.example.latinhaexpress.dao.AllDao;
+import com.example.latinhaexpress.database.MyDatabase;
+import com.example.latinhaexpress.entities.Sobre;
+import com.example.latinhaexpress.entities.Usuario;
 
 import java.util.List;
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity
     {
         Sobre s = new Sobre();
 
-        s.descricao = "O Sucata Control é um aplicativo de compra  e Venda de Aluminío (Latinhas), com controle de caixa e com recurso para calcular a redução de Carbono enviando toneladas de aluminio para reciclagem.";
+        s.descricao = "O Latinha Express é um aplicativo de compra  e Venda de Aluminío (Latinhas), com controle de caixa e com recurso para calcular a redução de Carbono enviando toneladas de aluminio para reciclagem.";
         s.recursos = "É utilizado banco de dados SQLite para persistência de informações, componentes de UI como ActionBar, ProgressBar e CardView, além de Fragments e Activities. ";
 
         allDao.insert_sobre(s);
