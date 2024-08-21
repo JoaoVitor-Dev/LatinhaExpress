@@ -1,6 +1,9 @@
 package com.example.latinhaexpress.views;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -8,11 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.latinhaexpress.R;
+import com.example.latinhaexpress.fragments.HomeFragment;
 
 public class MenuActivity extends AppCompatActivity
 {
-
+    private ImageButton imgNovaColeta;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -25,12 +32,26 @@ public class MenuActivity extends AppCompatActivity
             return insets;
         });
 
-        setup();
+        //setup();
+
+        if (savedInstanceState == null)
+        {
+           HomeFragment homeFragment = new HomeFragment();
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            fragmentTransaction.add(R.id.fragment_container, homeFragment);
+            fragmentTransaction.commit();
+        }
+
     }
 
     private void setup()
     {
-        TextView text_toolbar = findViewById(R.id.text_toolbar);
-        text_toolbar.setText("Latinha Express");
+       imgNovaColeta = findViewById(R.id.imgNovaColeta);
+
+       TextView text_toolbar = findViewById(R.id.text_toolbar);
+       text_toolbar.setText("Latinha Express");
     }
 }
