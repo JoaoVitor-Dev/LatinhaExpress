@@ -70,6 +70,11 @@ public class HomeFragment extends Fragment
 
         TextView text_toolbar = view.findViewById(R.id.text_toolbar);
         text_toolbar.setText("Latinha Express");
+
+        ImageButton imgvolta = view.findViewById(R.id.btnVoltar);
+        //imgvolta.setVisibility(ViewGroup.VISIBLE);
+
+
     }
 
     private void novaVenda()

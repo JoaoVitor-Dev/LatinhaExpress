@@ -9,9 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.room.Room;
 import com.example.latinhaexpress.R;
+import com.example.latinhaexpress.dao.AllDao;
+import com.example.latinhaexpress.database.MyDatabase;
+import com.example.latinhaexpress.views.MenuActivity;
 
-public class ColetaFragment extends Fragment {
+public class ColetaFragment extends Fragment
+{
+    private MyDatabase db;
+    private AllDao allDao;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,6 +29,7 @@ public class ColetaFragment extends Fragment {
 
         setup(view);
 
+
         return view;
     }
 
@@ -29,5 +37,7 @@ public class ColetaFragment extends Fragment {
     {
         TextView text_toolbar = view.findViewById(R.id.text_toolbar);
         text_toolbar.setText("Nova Coleta");
+
+
     }
 }

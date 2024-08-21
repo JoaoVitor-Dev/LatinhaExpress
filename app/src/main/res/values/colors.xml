@@ -6,4 +6,6 @@
     <color name="secundary">#F2F5F7</color>
     <color name="blue_bg">#E0ECF6</color>
     <color name="gray">#686B6E</color>
+    <color name="red">#E75A6B</color>
+    <color name="gray_bg">#F1F3F4</color>
 </resources>

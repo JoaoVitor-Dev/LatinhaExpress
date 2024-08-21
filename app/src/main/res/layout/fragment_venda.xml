@@ -25,15 +25,107 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/include">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="top"
-                android:orientation="vertical">
 
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:layout_marginTop="50dp"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    android:orientation="vertical">
+
+
+
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nome da Recicladora:"
+                            />
+
+                    <EditText
+                            android:id="@+id/edtNome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_edits"
+                            android:padding="16dp"
+                            android:hint="Nome:"
+                            />
+
+                    <TextView
+                            android:layout_marginTop="25dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Quantidade T:"
+                            />
+
+                    <EditText
+                            android:id="@+id/edtQtde"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_edits"
+                            android:padding="16dp"
+                            android:hint="Toneladas:"
+                            />
+
+                    <TextView
+                            android:layout_marginTop="25dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Preço R$:"
+                            />
+
+                    <EditText
+                            android:id="@+id/edtValor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_edits"
+                            android:padding="16dp"
+                            android:hint="Preço:"
+                            />
+
+
+
+
+
+                <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCancelarVenda"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/red"
+                            android:textSize="15dp"
+                            android:onClick="clicar"
+                            android:text="Cancelar"
+                            android:layout_marginRight="2dp"
+                            style="@style/Widget.MaterialComponents.Button"/>
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnVender"
+                            android:layout_width="5dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:textSize="15dp"
+                            android:onClick="clicar"
+                            android:layout_marginLeft="2dp"
+                            android:backgroundTint="@color/primary"
+                            android:text="vender"
+                            style="@style/Widget.MaterialComponents.Button" />
+                </LinearLayout>
 
 
             </LinearLayout>
+
+
+
+
 
 
         </ScrollView>
