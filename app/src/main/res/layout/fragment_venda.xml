@@ -49,14 +49,14 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_edits"
                             android:padding="16dp"
-                            android:hint="Nome:"
+                            android:hint="reclidadora"
                             />
 
                     <TextView
                             android:layout_marginTop="25dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Quantidade T:"
+                            android:text="Quantidade(Tonelada):"
                             />
 
                     <EditText
@@ -65,14 +65,15 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_edits"
                             android:padding="16dp"
-                            android:hint="Toneladas:"
+                            android:hint="0,00"
+                            android:inputType="numberDecimal"
                             />
 
                     <TextView
                             android:layout_marginTop="25dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Preço R$:"
+                            android:text="Preço por tonelada:"
                             />
 
                     <EditText
@@ -81,7 +82,8 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_edits"
                             android:padding="16dp"
-                            android:hint="Preço:"
+                            android:inputType="numberDecimal"
+                            android:hint="R$ 0,00"
                             />
 
 

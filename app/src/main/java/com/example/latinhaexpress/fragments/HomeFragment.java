@@ -44,7 +44,13 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-              novaColeta();
+                if(caixa != null)
+                {
+                    if(caixa.caixa_aberto)
+                    {
+                        novaColeta();
+                    }
+                }
             }
         });
 
@@ -53,7 +59,13 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                novaVenda();
+                if(caixa != null)
+                {
+                    if(caixa.caixa_aberto)
+                    {
+                        novaVenda();
+                    }
+                }
             }
         });
 
@@ -121,6 +133,8 @@ public class HomeFragment extends Fragment
     private void novaVenda()
     {
         VendaFragment vendaFragment = new VendaFragment();
+
+        vendaFragment.caixa = caixa;
 
         FragmentManager fragmentManager = getParentFragmentManager();
 
