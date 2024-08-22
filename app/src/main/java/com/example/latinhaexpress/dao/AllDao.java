@@ -25,6 +25,9 @@ public interface AllDao
     @Insert
     Long insert_caixa(Caixa c);
 
+    @Query("SELECT * FROM _caixa WHERE caixa_status = true")
+    Caixa get_caixa_aberto();
+
     @Query("SELECT  * FROM _SOBRE")
     Sobre getSobre();
 

@@ -1,5 +1,6 @@
 package com.example.latinhaexpress.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -29,7 +30,6 @@ public class ColetaFragment extends Fragment
 
         setup(view);
 
-
         return view;
     }
 
@@ -38,6 +38,11 @@ public class ColetaFragment extends Fragment
         TextView text_toolbar = view.findViewById(R.id.text_toolbar);
         text_toolbar.setText("Nova Coleta");
 
+        Context appContext = getContext();
+
+        db = Room.databaseBuilder(appContext, MyDatabase.class, "mydb")
+                .allowMainThreadQueries()
+                .build();
 
     }
 }

@@ -1,5 +1,6 @@
 package com.example.latinhaexpress.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -15,11 +16,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.latinhaexpress.R;
+import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.fragments.HomeFragment;
 
 public class MenuActivity extends AppCompatActivity
 {
     private ImageButton imgNovaColeta;
+    private Usuario usuarioLogado;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -32,11 +35,15 @@ public class MenuActivity extends AppCompatActivity
             return insets;
         });
 
-        //setup();
+        Intent it = getIntent();
+
+        usuarioLogado = (Usuario) getIntent().getSerializableExtra("usuario");
 
         if (savedInstanceState == null)
         {
            HomeFragment homeFragment = new HomeFragment();
+
+           homeFragment.usuarioLogado = usuarioLogado;
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -47,11 +54,5 @@ public class MenuActivity extends AppCompatActivity
 
     }
 
-    private void setup()
-    {
-       imgNovaColeta = findViewById(R.id.imgNovaColeta);
 
-       TextView text_toolbar = findViewById(R.id.text_toolbar);
-       text_toolbar.setText("Latinha Express");
-    }
 }
