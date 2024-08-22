@@ -3,6 +3,7 @@ package com.example.latinhaexpress.dao;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 import com.example.latinhaexpress.entities.*;
 
 import java.util.List;
@@ -25,8 +26,11 @@ public interface AllDao
     @Insert
     Long insert_caixa(Caixa c);
 
-    @Query("SELECT * FROM _caixa WHERE caixa_status = true")
+    @Query("SELECT * FROM _caixa WHERE caixa_aberto = true")
     Caixa get_caixa_aberto();
+
+    @Update
+    void update_caixa(Caixa caixa);
 
     @Query("SELECT  * FROM _SOBRE")
     Sobre getSobre();

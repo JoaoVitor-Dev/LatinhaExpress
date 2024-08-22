@@ -22,12 +22,11 @@ import com.example.latinhaexpress.entities.Usuario;
 
 public class HomeFragment extends Fragment
 {
-
     private ImageButton imgNovaColeta, imgNovaVenda;
     private MyDatabase db;
     private AllDao allDao;
     private TextView statuscaixa;
-    private int caixa_id;
+    private Caixa caixa;
     public Usuario usuarioLogado;
 
     @Override
@@ -38,9 +37,7 @@ public class HomeFragment extends Fragment
 
         setup(view);
 
-       // mostraStatusCaixa();
-
-        insertaUmCaixa();
+        mostraStatusCaixa();
 
         imgNovaColeta.setOnClickListener(new View.OnClickListener()
         {
@@ -60,12 +57,34 @@ public class HomeFragment extends Fragment
             }
         });
 
+        statuscaixa.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(caixa != null)
+                {
+                    if(caixa.caixa_aberto)
+                    {
+                        fecharCaixa();
+                    }else
+                    {
+                        abrirCaixa();
+                    }
+                }else {
+                    abrirCaixa();
+                }
+            }
+        });
+
         return view;
     }
 
     private void novaColeta()
     {
         ColetaFragment coletaFragment = new ColetaFragment();
+
+        coletaFragment.caixa = caixa;
 
         FragmentManager fragmentManager = getParentFragmentManager();
 
@@ -87,8 +106,8 @@ public class HomeFragment extends Fragment
         TextView text_toolbar = view.findViewById(R.id.text_toolbar);
         text_toolbar.setText("Latinha Express");
 
-        ImageButton imgvolta = view.findViewById(R.id.btnVoltar);
-        //imgvolta.setVisibility(ViewGroup.VISIBLE);
+        ImageButton imgvoltar = view.findViewById(R.id.btnVoltar);
+
 
         Context appContext = getContext();
 
@@ -116,23 +135,35 @@ public class HomeFragment extends Fragment
 
     private void mostraStatusCaixa()
     {
-        Caixa caixa = allDao.get_caixa_aberto();
+         caixa = allDao.get_caixa_aberto();
 
         if(caixa == null)
         {
             statuscaixa.setText("Abrir Caixa");
-
+        }else
+        {
+            statuscaixa.setText("Fechar Caixa");
         }
     }
 
-    private void insertaUmCaixa()
+    private void abrirCaixa()
     {
-        Caixa caixa = new Caixa();
+        caixa = new Caixa();
 
-        caixa.caixa_status = "A";
         caixa.usuario_id = usuarioLogado.usuario_id;
 
         allDao.insert_caixa(caixa);
+
+        statuscaixa.setText("Fechar Caixa");
+    }
+
+    private void fecharCaixa()
+    {
+        caixa.caixa_aberto = false;
+
+        allDao.update_caixa(caixa);
+
+        statuscaixa.setText("Abrir Caixa");
     }
 
 

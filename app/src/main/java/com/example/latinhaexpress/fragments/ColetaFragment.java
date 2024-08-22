@@ -3,6 +3,9 @@ package com.example.latinhaexpress.fragments;
 import android.content.Context;
 import android.os.Bundle;
 
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,12 +17,18 @@ import androidx.room.Room;
 import com.example.latinhaexpress.R;
 import com.example.latinhaexpress.dao.AllDao;
 import com.example.latinhaexpress.database.MyDatabase;
+import com.example.latinhaexpress.entities.Caixa;
+import com.example.latinhaexpress.entities.Coleta;
 import com.example.latinhaexpress.views.MenuActivity;
 
 public class ColetaFragment extends Fragment
 {
     private MyDatabase db;
     private AllDao allDao;
+    private EditText edtNome, edtQtde, edtValor, edtObs;
+    private Button btnComprar, btnCancelarColeta;
+    private Context appContext;
+    public Caixa caixa;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,11 +39,30 @@ public class ColetaFragment extends Fragment
 
         setup(view);
 
+        btnComprar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                realizarCompra();
+            }
+        });
+
         return view;
     }
 
     private void setup(View view)
     {
+        appContext = getContext();
+
+        edtNome = view.findViewById(R.id.edtNome);
+        edtQtde = view.findViewById(R.id.edtQtde);
+        edtValor = view.findViewById(R.id.edtValor);
+        edtObs = view.findViewById(R.id.edtObs);
+
+        btnComprar = view.findViewById(R.id.btnComprar);
+        btnCancelarColeta = view.findViewById(R.id.btnCancelarColeta);
+
         TextView text_toolbar = view.findViewById(R.id.text_toolbar);
         text_toolbar.setText("Nova Coleta");
 
@@ -44,5 +72,37 @@ public class ColetaFragment extends Fragment
                 .allowMainThreadQueries()
                 .build();
 
+        allDao = db.allDao();
+    }
+
+    private void realizarCompra()
+    {
+       String nome = edtNome.getText().toString().trim().toUpperCase();
+       String qtde = edtQtde.getText().toString();
+       String valor = edtValor.getText().toString();
+       String obs = edtObs.getText().toString();
+
+       if(nome.isEmpty())
+       {
+           Toast.makeText(appContext, "Por favor, informe o nome!", Toast.LENGTH_SHORT).show();
+       } else if (qtde.isEmpty())
+       {
+           Toast.makeText(appContext, "Por favor, informe a quantidade!", Toast.LENGTH_SHORT).show();
+       } else if (valor.isEmpty())
+       {
+           Toast.makeText(appContext, "Por favor, informe o Preço!", Toast.LENGTH_SHORT).show();
+       }else
+       {
+           Coleta coleta = new Coleta();
+
+           coleta.caixa_id = caixa.caixa_id;
+           coleta.coleta_vendedor_nome = nome;
+           coleta.coleta_qtde = Double.parseDouble(qtde);
+           coleta.coleta_preco = Double.parseDouble(valor);
+
+           allDao.insert_coleta(coleta);
+
+           Toast.makeText(appContext, "Compra realizada!", Toast.LENGTH_SHORT).show();
+       }
     }
 }

@@ -46,7 +46,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_edits"
                         android:padding="16dp"
-                        android:hint="Nome:"
+                        android:hint="nome do vendedor"
                         />
 
                 <TextView
@@ -63,14 +63,14 @@
                         android:background="@drawable/bg_edits"
                         android:padding="16dp"
                         android:inputType="numberDecimal"
-                        android:hint="Qtde:"
+                        android:hint="quantidade"
                         />
 
                 <TextView
                         android:layout_marginTop="25dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Preço R$:"
+                        android:text="Preço por KG:"
                         />
 
                 <EditText
@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_edits"
                         android:padding="16dp"
-                        android:hint="Preço:"
+                        android:hint="R$ 0,00"
                         android:inputType="numberDecimal"
                         />
 
@@ -87,6 +87,7 @@
                         android:layout_marginTop="25dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
                         android:text="Observação:"
                         />
 
@@ -96,7 +97,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_edits"
                         android:padding="16dp"
-                        android:hint="Obs:"
+                        android:hint="observação"
                         />
 
                 <LinearLayout

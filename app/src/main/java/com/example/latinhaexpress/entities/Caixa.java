@@ -22,8 +22,8 @@ public class Caixa
     @ColumnInfo(name = "caixa_id")
     public Long caixa_id;
 
-    @ColumnInfo(name = "caixa_status")
-    public String caixa_status;
+    @ColumnInfo(name = "caixa_aberto")
+    public Boolean caixa_aberto;
 
     @ColumnInfo(name = "usuario_id")
     public Long usuario_id;
@@ -34,9 +34,9 @@ public class Caixa
     public Caixa(){}
 
     @Ignore
-    public Caixa(String caixa_status, Long usuario_id, Double caixa_saldo)
+    public Caixa(Boolean caixa_aberto, Long usuario_id, Double caixa_saldo)
     {
-        this.caixa_status = caixa_status;
+        this.caixa_aberto = caixa_aberto;
         this.usuario_id = usuario_id;
         this.caixa_saldo = caixa_saldo;
     }

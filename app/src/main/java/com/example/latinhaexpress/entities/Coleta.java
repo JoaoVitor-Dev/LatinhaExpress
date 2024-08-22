@@ -1,9 +1,6 @@
 package com.example.latinhaexpress.entities;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.ForeignKey;
-import androidx.room.PrimaryKey;
+import androidx.room.*;
 
 @Entity(
         tableName = "_coleta", foreignKeys = {
@@ -36,4 +33,16 @@ public class Coleta
 
     @ColumnInfo(name = "coleta_obs")
     public Double coleta_obs;
+
+    public Coleta(){}
+
+    @Ignore
+    public Coleta(Long caixa_id, String coleta_vendedor_nome, Double coleta_qtde, Double coleta_preco, Double coleta_obs)
+    {
+        this.caixa_id = caixa_id;
+        this.coleta_vendedor_nome = coleta_vendedor_nome;
+        this.coleta_qtde = coleta_qtde;
+        this.coleta_preco = coleta_preco;
+        this.coleta_obs = coleta_obs;
+    }
 }
