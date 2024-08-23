@@ -29,7 +29,7 @@ public class VendaFragment extends Fragment
     private Context appContext;
     private MyDatabase db;
     private AllDao allDao;
-    public Caixa caixa;
+    public Long caixa_id;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

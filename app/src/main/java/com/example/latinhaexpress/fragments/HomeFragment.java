@@ -26,6 +26,7 @@ public class HomeFragment extends Fragment
     private MyDatabase db;
     private AllDao allDao;
     private TextView statuscaixa;
+    private Long id_caixa;
     private Caixa caixa;
     public Usuario usuarioLogado;
 
@@ -44,12 +45,8 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                if(caixa != null)
-                {
-                    if(caixa.caixa_aberto)
-                    {
-                        novaColeta();
-                    }
+                if(caixa != null){
+                    novaColeta();
                 }
             }
         });
@@ -61,10 +58,7 @@ public class HomeFragment extends Fragment
             {
                 if(caixa != null)
                 {
-                    if(caixa.caixa_aberto)
-                    {
-                        novaVenda();
-                    }
+                    novaVenda();
                 }
             }
         });
@@ -74,17 +68,11 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                if(caixa != null)
+                if(caixa == null)
                 {
-                    if(caixa.caixa_aberto)
-                    {
-                        fecharCaixa();
-                    }else
-                    {
-                        abrirCaixa();
-                    }
-                }else {
                     abrirCaixa();
+                }else{
+                    fecharCaixa();
                 }
             }
         });
@@ -96,7 +84,7 @@ public class HomeFragment extends Fragment
     {
         ColetaFragment coletaFragment = new ColetaFragment();
 
-        coletaFragment.caixa = caixa;
+        coletaFragment.caixa_id = id_caixa;
 
         FragmentManager fragmentManager = getParentFragmentManager();
 
@@ -134,7 +122,7 @@ public class HomeFragment extends Fragment
     {
         VendaFragment vendaFragment = new VendaFragment();
 
-        vendaFragment.caixa = caixa;
+        vendaFragment.caixa_id = id_caixa;
 
         FragmentManager fragmentManager = getParentFragmentManager();
 
@@ -149,7 +137,7 @@ public class HomeFragment extends Fragment
 
     private void mostraStatusCaixa()
     {
-         caixa = allDao.get_caixa_aberto();
+        Caixa caixa = allDao.get_caixa_aberto();
 
         if(caixa == null)
         {
@@ -164,9 +152,11 @@ public class HomeFragment extends Fragment
     {
         caixa = new Caixa();
 
+        caixa.caixa_aberto = true;
+
         caixa.usuario_id = usuarioLogado.usuario_id;
 
-        allDao.insert_caixa(caixa);
+        caixa.caixa_id = allDao.insert_caixa(caixa);
 
         statuscaixa.setText("Fechar Caixa");
     }
@@ -176,6 +166,8 @@ public class HomeFragment extends Fragment
         caixa.caixa_aberto = false;
 
         allDao.update_caixa(caixa);
+
+        caixa = null;
 
         statuscaixa.setText("Abrir Caixa");
     }

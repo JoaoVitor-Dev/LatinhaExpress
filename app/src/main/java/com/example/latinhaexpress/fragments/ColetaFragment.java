@@ -28,7 +28,7 @@ public class ColetaFragment extends Fragment
     private EditText edtNome, edtQtde, edtValor, edtObs;
     private Button btnComprar, btnCancelarColeta;
     private Context appContext;
-    public Caixa caixa;
+    public Long caixa_id;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -95,7 +95,7 @@ public class ColetaFragment extends Fragment
        {
            Coleta coleta = new Coleta();
 
-           coleta.caixa_id = caixa.caixa_id;
+           coleta.caixa_id = caixa_id;
            coleta.coleta_vendedor_nome = nome;
            coleta.coleta_qtde = Double.parseDouble(qtde);
            coleta.coleta_preco = Double.parseDouble(valor);
