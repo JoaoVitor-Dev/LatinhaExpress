@@ -82,17 +82,24 @@ public class CadastroUsuarioActivity extends AppCompatActivity
             return;
         }
 
-        Usuario usuario = new Usuario(nome, senha);
+        Usuario usuario = allDao.usuario_por_nome(nome.trim().toLowerCase());
 
-        allDao.insert_usuario(usuario);
+        if (usuario == null)
+        {
+            usuario = new Usuario(nome, senha);
 
-        Toast.makeText(this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
+            allDao.insert_usuario(usuario);
 
-        Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
+            Toast.makeText(this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
 
-        it.putExtra("nome_usuario", nome);
+            Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
 
-        startActivity(it);
+            it.putExtra("nome_usuario", nome);
 
+            startActivity(it);
+        }else
+        {
+            Toast.makeText(this, "Já existe usuário cadastrado com este Login!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

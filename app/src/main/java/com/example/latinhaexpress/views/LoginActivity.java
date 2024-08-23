@@ -41,6 +41,14 @@ public class LoginActivity extends AppCompatActivity
 
         setup();
 
+        Intent it = getIntent();
+
+        String nome = it.getStringExtra("nome_usuario");
+
+        if (nome != null && !nome.isEmpty()) {
+            edtNome.setText(nome);
+        }
+
         btnAcessar.setOnClickListener(new View.OnClickListener()
         {
             @Override
