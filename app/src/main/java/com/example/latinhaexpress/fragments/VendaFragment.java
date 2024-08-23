@@ -97,6 +97,8 @@ public class VendaFragment extends Fragment
             venda.venda_qtde = Double.parseDouble(qtde);
             venda.venda_preco_total = Double.parseDouble(valor);
 
+            venda.caixa_id = caixa_id;
+
             allDao.insert_venda(venda);
 
             Toast.makeText(appContext, "Venda realizada com sucesso!", Toast.LENGTH_SHORT).show();

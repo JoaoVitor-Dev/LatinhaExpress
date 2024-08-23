@@ -56,15 +56,17 @@
                         android:text="Quantidade KG:"
                         />
 
-                <EditText
+
+                    <EditText
                         android:id="@+id/edtQtde"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_edits"
-                        android:padding="16dp"
+                        android:hint="0,0"
                         android:inputType="numberDecimal"
-                        android:hint="quantidade"
-                        />
+                        android:padding="16dp"
+                        android:textSize="18dp" />
+
 
                 <TextView
                         android:layout_marginTop="25dp"

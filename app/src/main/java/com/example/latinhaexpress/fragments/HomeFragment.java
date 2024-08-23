@@ -137,7 +137,7 @@ public class HomeFragment extends Fragment
 
     private void mostraStatusCaixa()
     {
-        Caixa caixa = allDao.get_caixa_aberto();
+        caixa = allDao.get_caixa_aberto();
 
         if(caixa == null)
         {

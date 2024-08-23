@@ -68,38 +68,35 @@ public class CadastroUsuarioActivity extends AppCompatActivity
         String nome = edtNome.getText().toString().trim().toLowerCase();
         String senha = edtSenha.getText().toString().trim().toLowerCase();
 
-        if (nome.equals(""))
+        if(nome.isEmpty())
         {
             Toast.makeText(this, "Por favor, informe o nome!", Toast.LENGTH_SHORT).show();
             edtNome.requestFocus();
-            return;
-        }
-
-        if (senha.equals(""))
-        {
+        } else if (senha.isEmpty()) {
             Toast.makeText(this, "Por favor, informe a senha!", Toast.LENGTH_SHORT).show();
             edtSenha.requestFocus();
-            return;
-        }
-
-        Usuario usuario = allDao.usuario_por_nome(nome.trim().toLowerCase());
-
-        if (usuario == null)
-        {
-            usuario = new Usuario(nome, senha);
-
-            allDao.insert_usuario(usuario);
-
-            Toast.makeText(this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
-
-            Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
-
-            it.putExtra("nome_usuario", nome);
-
-            startActivity(it);
         }else
         {
-            Toast.makeText(this, "Já existe usuário cadastrado com este Login!", Toast.LENGTH_SHORT).show();
+            Usuario usuario = allDao.usuario_por_nome(nome.trim().toLowerCase());
+
+            if (usuario == null)
+            {
+                usuario = new Usuario(nome, senha);
+
+                allDao.insert_usuario(usuario);
+
+                Toast.makeText(this, "Usuário cadastrado!", Toast.LENGTH_SHORT).show();
+
+                Intent it = new Intent(CadastroUsuarioActivity.this, LoginActivity.class);
+
+                it.putExtra("nome_usuario", nome);
+
+                startActivity(it);
+            }else
+            {
+                Toast.makeText(this, "Já existe usuário cadastrado com este Login!", Toast.LENGTH_SHORT).show();
+            }
         }
+
     }
 }
