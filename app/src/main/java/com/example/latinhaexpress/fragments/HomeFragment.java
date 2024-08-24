@@ -1,8 +1,11 @@
 package com.example.latinhaexpress.fragments;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -29,6 +32,7 @@ public class HomeFragment extends Fragment
     private Long id_caixa;
     private Caixa caixa;
     public Usuario usuarioLogado;
+    private Button btnCaixa;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,7 +67,7 @@ public class HomeFragment extends Fragment
             }
         });
 
-        statuscaixa.setOnClickListener(new View.OnClickListener()
+        btnCaixa.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -102,12 +106,12 @@ public class HomeFragment extends Fragment
         imgNovaColeta = view.findViewById(R.id.imgNovaColeta);
         imgNovaVenda = view.findViewById(R.id.imgNovaVenda);
         statuscaixa = view.findViewById(R.id.statuscaixa);
+        btnCaixa = view.findViewById(R.id.btnCaixa);
 
         TextView text_toolbar = view.findViewById(R.id.text_toolbar);
         text_toolbar.setText("Latinha Express");
 
         ImageButton imgvoltar = view.findViewById(R.id.btnVoltar);
-
 
         Context appContext = getContext();
 
@@ -141,10 +145,14 @@ public class HomeFragment extends Fragment
 
         if(caixa == null)
         {
-            statuscaixa.setText("Abrir Caixa");
+            statuscaixa.setText("Caixa fechado");
+            statuscaixa.setTextColor(Color.RED);
+            btnCaixa.setText("Abrir caixa");
         }else
         {
-            statuscaixa.setText("Fechar Caixa");
+            statuscaixa.setText("Caixa aberto");
+            statuscaixa.setTextColor(Color.GREEN);
+            btnCaixa.setText("Fechar caixa");
         }
     }
 
@@ -158,7 +166,10 @@ public class HomeFragment extends Fragment
 
         caixa.caixa_id = allDao.insert_caixa(caixa);
 
-        statuscaixa.setText("Fechar Caixa");
+        statuscaixa.setText("Caixa aberto");
+        statuscaixa.setTextColor(Color.GREEN);
+
+        btnCaixa.setText("Fechar caixa");
     }
 
     private void fecharCaixa()
@@ -169,7 +180,10 @@ public class HomeFragment extends Fragment
 
         caixa = null;
 
-        statuscaixa.setText("Abrir Caixa");
+        statuscaixa.setText("Caixa fechado");
+        statuscaixa.setTextColor(Color.RED);
+
+        btnCaixa.setText("Abrir caixa");
     }
 
 

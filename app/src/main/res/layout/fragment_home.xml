@@ -36,6 +36,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Status Caixa"
+                        android:textStyle="bold"
                         android:gravity="center"
                         android:textSize="20dp"
                         />
@@ -58,13 +59,16 @@
                                 android:orientation="horizontal">
 
                             <LinearLayout
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:orientation="vertical">
                                 <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:textColor="@color/primary"
+                                        android:textStyle="bold"
+                                        android:textSize="16sp"
                                         android:text="Coletas:"
                                         />
 
@@ -72,6 +76,76 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Vendas:"
+                                        android:textColor="@color/green"
+                                        android:textStyle="bold"
+                                        android:textSize="16sp"
+                                        />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:orientation="vertical">
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0,00"
+                                        android:textSize="16sp"
+                                        android:textColor="@color/primary"
+                                        />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0,00"
+                                        android:textSize="16sp"
+                                        android:textColor="@color/green"
+                                        />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:orientation="vertical">
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="16sp"
+                                        android:text="Saldo Total:"
+                                        android:textStyle="bold"
+                                        />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="16sp"
+                                        android:text="Co2 reduzido:"
+                                        android:textStyle="bold"
+                                        />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:orientation="vertical">
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0,00"
+                                        android:textSize="16sp"
+                                        />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0,00"
+                                        android:textSize="16sp"
                                         />
 
                             </LinearLayout>
@@ -85,9 +159,11 @@
                                 android:orientation="horizontal">
 
                             <android.widget.Button
+                                    android:id="@+id/btnCaixa"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Abrir caixa"
+                                    android:textColor="@color/white"
                                     android:backgroundTint="@color/gray"
                                     />
 
