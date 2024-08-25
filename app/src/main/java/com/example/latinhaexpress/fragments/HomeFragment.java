@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment
     private ImageButton imgNovaColeta, imgNovaVenda;
     private MyDatabase db;
     private AllDao allDao;
-    private TextView statuscaixa;
+    private TextView statuscaixa, totalColetas;
     private Long id_caixa;
     private Caixa caixa;
     public Usuario usuarioLogado;
@@ -81,6 +81,8 @@ public class HomeFragment extends Fragment
             }
         });
 
+        setaValoresCaixa();
+
         return view;
     }
 
@@ -107,11 +109,13 @@ public class HomeFragment extends Fragment
         imgNovaVenda = view.findViewById(R.id.imgNovaVenda);
         statuscaixa = view.findViewById(R.id.statuscaixa);
         btnCaixa = view.findViewById(R.id.btnCaixa);
+        totalColetas = view.findViewById(R.id.totalColetas);
 
         TextView text_toolbar = view.findViewById(R.id.text_toolbar);
         text_toolbar.setText("Latinha Express");
 
         ImageButton imgvoltar = view.findViewById(R.id.btnVoltar);
+        imgvoltar.setVisibility(View.INVISIBLE);
 
         Context appContext = getContext();
 
@@ -153,6 +157,18 @@ public class HomeFragment extends Fragment
             statuscaixa.setText("Caixa aberto");
             statuscaixa.setTextColor(Color.GREEN);
             btnCaixa.setText("Fechar caixa");
+        }
+    }
+
+    private void setaValoresCaixa()
+    {
+        if(caixa != null)
+        {
+            caixa.caixa_coletas = allDao.total_coletas(caixa.caixa_id);
+
+
+
+            //totalColetas.setText(Double.toString(caixa.caixa_coletas));
         }
     }
 
