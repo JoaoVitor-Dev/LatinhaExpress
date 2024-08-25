@@ -166,8 +166,6 @@ public class HomeFragment extends Fragment
         {
             caixa.caixa_coletas = allDao.total_coletas(caixa.caixa_id);
 
-
-
             //totalColetas.setText(Double.toString(caixa.caixa_coletas));
         }
     }
