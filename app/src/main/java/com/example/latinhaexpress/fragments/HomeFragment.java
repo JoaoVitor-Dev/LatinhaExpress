@@ -5,14 +5,14 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import android.view.*;
 import android.widget.Button;
+import android.widget.Toolbar;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -37,7 +37,6 @@ public class HomeFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
 
         setup(view);
@@ -111,12 +110,6 @@ public class HomeFragment extends Fragment
         btnCaixa = view.findViewById(R.id.btnCaixa);
         totalColetas = view.findViewById(R.id.totalColetas);
 
-        TextView text_toolbar = view.findViewById(R.id.text_toolbar);
-        text_toolbar.setText("Latinha Express");
-
-        ImageButton imgvoltar = view.findViewById(R.id.btnVoltar);
-        imgvoltar.setVisibility(View.INVISIBLE);
-
         Context appContext = getContext();
 
         db = Room.databaseBuilder(appContext, MyDatabase.class, "mydb")
@@ -142,6 +135,7 @@ public class HomeFragment extends Fragment
 
         fragmentTransaction.commit();
     }
+
 
     private void mostraStatusCaixa()
     {

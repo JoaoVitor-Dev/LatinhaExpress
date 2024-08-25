@@ -10,11 +10,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <include layout="@layout/toolbar"
-                android:id="@+id/include"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
                 android:layout_width="match_parent"
@@ -23,7 +18,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/include">
+                app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -38,8 +33,7 @@
                         android:text="Status Caixa"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:textSize="20dp"
-                        />
+                        android:textSize="20dp" />
 
 
                 <androidx.cardview.widget.CardView
@@ -71,14 +65,14 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:orientation="vertical">
+
                                 <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="@color/primary"
                                         android:textStyle="bold"
                                         android:textSize="16sp"
-                                        android:text="Coletas:"
-                                        />
+                                        android:text="Coletas:" />
 
                                 <TextView
                                         android:layout_width="wrap_content"
@@ -86,8 +80,7 @@
                                         android:text="Vendas:"
                                         android:textColor="@color/green"
                                         android:textStyle="bold"
-                                        android:textSize="16sp"
-                                        />
+                                        android:textSize="16sp" />
 
                             </LinearLayout>
 
@@ -96,22 +89,21 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:orientation="vertical">
+
                                 <TextView
                                         android:id="@+id/totalColetas"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="0,00"
                                         android:textSize="16sp"
-                                        android:textColor="@color/primary"
-                                        />
+                                        android:textColor="@color/primary" />
 
                                 <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="0,00"
                                         android:textSize="16sp"
-                                        android:textColor="@color/green"
-                                        />
+                                        android:textColor="@color/green" />
 
                             </LinearLayout>
 
@@ -120,21 +112,20 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:orientation="vertical">
+
                                 <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textSize="16sp"
                                         android:text="Saldo Total:"
-                                        android:textStyle="bold"
-                                        />
+                                        android:textStyle="bold" />
 
                                 <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textSize="16sp"
                                         android:text="Co2 reduzido:"
-                                        android:textStyle="bold"
-                                        />
+                                        android:textStyle="bold" />
 
                             </LinearLayout>
 
@@ -143,19 +134,18 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:orientation="vertical">
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="0,00"
-                                        android:textSize="16sp"
-                                        />
 
                                 <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="0,00"
-                                        android:textSize="16sp"
-                                        />
+                                        android:textSize="16sp" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0,00"
+                                        android:textSize="16sp" />
 
                             </LinearLayout>
 
@@ -173,8 +163,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Abrir caixa"
                                     android:textColor="@color/white"
-                                    android:backgroundTint="@color/gray"
-                                    />
+                                    android:backgroundTint="@color/gray" />
 
 
                         </LinearLayout>
@@ -182,9 +171,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
-
-
 
 
                 <LinearLayout
@@ -225,7 +211,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/ic_new_coleta"
-                                android:backgroundTint="@color/white"/>
+                                android:backgroundTint="@color/white" />
                     </androidx.cardview.widget.CardView>
 
 
@@ -243,7 +229,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/ic_new_coleta"
-                                android:backgroundTint="@color/white"/>
+                                android:backgroundTint="@color/white" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -260,7 +246,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/ic_new_coleta"
-                                android:backgroundTint="@color/white"/>
+                                android:backgroundTint="@color/white" />
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
@@ -275,37 +261,32 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Coleta"
-                            android:layout_marginLeft="20dp"
-                            />
+                            android:layout_marginLeft="20dp" />
 
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Venda"
-                            android:layout_marginLeft="36dp"
-                            />
+                            android:layout_marginLeft="36dp" />
 
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Config"
-                            android:layout_marginLeft="36dp"
-                            />
+                            android:layout_marginLeft="36dp" />
 
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Sair"
-                            android:layout_marginLeft="36dp"
-                            />
+                            android:layout_marginLeft="36dp" />
 
                 </LinearLayout>
 
                 <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/lata_de_lixo"
-                        />
+                        android:src="@drawable/lata_de_lixo" />
 
             </LinearLayout>
 

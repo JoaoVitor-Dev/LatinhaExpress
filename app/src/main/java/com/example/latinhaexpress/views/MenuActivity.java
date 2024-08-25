@@ -2,12 +2,16 @@ package com.example.latinhaexpress.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import android.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -34,6 +38,8 @@ public class MenuActivity extends AppCompatActivity
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        
+       // montaToolbar();
 
         Intent it = getIntent();
 
@@ -51,8 +57,40 @@ public class MenuActivity extends AppCompatActivity
             fragmentTransaction.add(R.id.fragment_container, homeFragment);
             fragmentTransaction.commit();
         }
-
     }
 
+    private void montaToolbar()
+    {
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_principal, menu);
+        return true;
+    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+//    {
+//        if (item.getTitle().equals("Principal"))
+//        {
+//
+//        } else if (item.getTitle().equals("Caixas"))
+//        {
+//
+//        } else if (item.getTitle().equals("Coletas"))
+//        {
+//
+//        } else if (item.getTitle().equals("Vendas"))
+//        {
+//
+//        } else if (item.getTitle().equals("Sair"))
+//        {
+//            finishAffinity();
+//        }
+//
+//        return true;
+//    }
 }
