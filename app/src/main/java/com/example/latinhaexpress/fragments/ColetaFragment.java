@@ -37,23 +37,23 @@ public class ColetaFragment extends Fragment
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_coleta, container, false);
 
-//        setup(view);
-//
-//        btnComprar.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View v)
-//            {
-//                realizarCompra();
-//            }
-//        });
+        setup(view);
+
+        btnComprar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                realizarCompra();
+            }
+        });
 
         return view;
     }
 
     private void setup(View view)
     {
-//        appContext = getContext();
+        appContext = getContext();
         edtNome = view.findViewById(R.id.edtNome);
         edtQtde = view.findViewById(R.id.edtQtde);
         edtValor = view.findViewById(R.id.edtValor);
