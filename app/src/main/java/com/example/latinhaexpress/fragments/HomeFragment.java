@@ -178,7 +178,6 @@ public class HomeFragment extends Fragment
         fragmentTransaction.commit();
     }
 
-
     private void mostraStatusCaixa()
     {
         caixa = allDao.get_caixa_aberto();

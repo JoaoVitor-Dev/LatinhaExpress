@@ -1,6 +1,7 @@
 package com.example.latinhaexpress.fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import android.widget.Button;
@@ -13,10 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.room.Room;
 import com.example.latinhaexpress.R;
 import com.example.latinhaexpress.dao.AllDao;
 import com.example.latinhaexpress.database.MyDatabase;
+import com.example.latinhaexpress.dialog.MyDialog;
 import com.example.latinhaexpress.entities.Caixa;
 import com.example.latinhaexpress.entities.Coleta;
 import com.example.latinhaexpress.views.MenuActivity;
@@ -45,6 +49,32 @@ public class ColetaFragment extends Fragment
             public void onClick(View v)
             {
                 realizarCompra();
+            }
+        });
+
+        btnCancelarColeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                FragmentManager fragmentManager = getParentFragmentManager();
+                MyDialog dialog = MyDialog.newInstance("Aviso", "Deseja cancelar a Coleta?");
+
+                dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        cancelarColeta();
+                    }
+                });
+                dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        Toast.makeText(appContext, "Operação cancelada!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                dialog.show(fragmentManager, "MyDialog");
             }
         });
 
@@ -98,5 +128,22 @@ public class ColetaFragment extends Fragment
 
            Toast.makeText(appContext, "Compra realizada!", Toast.LENGTH_SHORT).show();
        }
+    }
+
+    private void cancelarColeta()
+    {
+        HomeFragment homeFragment = new HomeFragment();
+
+        FragmentManager fragmentManager = getParentFragmentManager();
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.fragment_container, homeFragment);
+
+        fragmentTransaction.addToBackStack(null);
+
+        Toast.makeText(appContext, "Coleta cancelada com sucesso!", Toast.LENGTH_SHORT).show();
+
+        fragmentTransaction.commit();
     }
 }
