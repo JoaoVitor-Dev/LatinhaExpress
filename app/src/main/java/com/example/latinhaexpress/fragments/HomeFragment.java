@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment
     {
         ColetaFragment coletaFragment = new ColetaFragment();
 
-        //coletaFragment.caixa_id = id_caixa;
+        coletaFragment.caixa_id = id_caixa;
 
         FragmentManager fragmentManager = getParentFragmentManager();
 

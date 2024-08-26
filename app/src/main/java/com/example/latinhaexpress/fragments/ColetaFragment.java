@@ -53,7 +53,7 @@ public class ColetaFragment extends Fragment
 
     private void setup(View view)
     {
-        appContext = getContext();
+//        appContext = getContext();
         edtNome = view.findViewById(R.id.edtNome);
         edtQtde = view.findViewById(R.id.edtQtde);
         edtValor = view.findViewById(R.id.edtValor);

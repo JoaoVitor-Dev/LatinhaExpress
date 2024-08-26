@@ -62,7 +62,7 @@ public class MenuActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
        // getSupportActionBar().setTitle("Latinha Express");
         toolbar.setTitleTextColor(Color.WHITE);
-        //getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
     }
 
     @Override

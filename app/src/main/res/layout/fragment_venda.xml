@@ -79,29 +79,28 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                    <com.google.android.material.button.MaterialButton
+                    <Button
                             android:id="@+id/btnCancelarVenda"
                             android:layout_width="0dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
                             android:backgroundTint="@color/red"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:onClick="clicar"
                             android:text="Cancelar"
-                            android:layout_marginRight="2dp"
-                            style="@style/Widget.MaterialComponents.Button" />
+                            android:layout_marginRight="2dp" />
 
-                    <com.google.android.material.button.MaterialButton
+                    <Button
                             android:id="@+id/btnVender"
                             android:layout_width="5dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:onClick="clicar"
                             android:layout_marginLeft="2dp"
                             android:backgroundTint="@color/primary"
                             android:text="vender"
-                            style="@style/Widget.MaterialComponents.Button" />
+                             />
                 </LinearLayout>
 
 

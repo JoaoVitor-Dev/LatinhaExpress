@@ -5,110 +5,105 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ColetaFragment">
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:layout_marginTop="50dp"
-                    android:paddingStart="32dp"
-                    android:paddingEnd="32dp"
-                    android:orientation="vertical">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_marginTop="50dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:orientation="vertical">
 
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Nome do Vendedor:" />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome do Vendedor:" />
 
-                <EditText
-                        android:id="@+id/edtNome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_edits"
-                        android:padding="16dp"
-                        android:hint="nome do vendedor" />
+        <EditText
+                android:id="@+id/edtNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edits"
+                android:padding="16dp"
+                android:hint="nome do vendedor" />
 
-                <TextView
-                        android:layout_marginTop="25dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Quantidade KG:" />
-
-
-                <EditText
-                        android:id="@+id/edtQtde"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_edits"
-                        android:hint="0,0"
-                        android:inputType="numberDecimal"
-                        android:padding="16dp"
-                        android:textSize="18dp" />
+        <TextView
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quantidade KG:" />
 
 
-                <TextView
-                        android:layout_marginTop="25dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Preço por KG:" />
-
-                <EditText
-                        android:id="@+id/edtValor"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_edits"
-                        android:padding="16dp"
-                        android:hint="R$ 0,00"
-                        android:inputType="numberDecimal" />
-
-                <TextView
-                        android:layout_marginTop="25dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:text="Observação:" />
-
-                <EditText
-                        android:id="@+id/edtObs"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_edits"
-                        android:padding="16dp"
-                        android:hint="observação" />
-
-                <LinearLayout
-                        android:layout_marginTop="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnCancelarColeta"
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:backgroundTint="@color/red"
-                            android:textSize="15dp"
-                            android:onClick="clicar"
-                            android:text="Cancelar"
-                            android:layout_marginRight="2dp"
-                            style="@style/Widget.MaterialComponents.Button" />
-
-                    <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnComprar"
-                            android:layout_width="5dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:textSize="15dp"
-                            android:onClick="clicar"
-                            android:layout_marginLeft="2dp"
-                            android:backgroundTint="@color/primary"
-                            android:text="comprar"
-
-                            style="@style/Widget.MaterialComponents.Button" />
-                </LinearLayout>
+        <EditText
+                android:id="@+id/edtQtde"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edits"
+                android:hint="0,0"
+                android:inputType="numberDecimal"
+                android:padding="16dp"
+                android:textSize="18dp" />
 
 
-            </LinearLayout>
+        <TextView
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preço por KG:" />
+
+        <EditText
+                android:id="@+id/edtValor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edits"
+                android:padding="16dp"
+                android:hint="R$ 0,00"
+                android:inputType="numberDecimal" />
+
+        <TextView
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="Observação:" />
+
+        <EditText
+                android:id="@+id/edtObs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edits"
+                android:padding="16dp"
+                android:hint="observação" />
+
+        <LinearLayout
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                    android:id="@+id/btnCancelarColeta"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/red"
+                    android:textSize="15sp"
+                    android:text="Cancelar"
+                    android:layout_marginRight="2dp" />
+
+            <Button
+                    android:id="@+id/btnComprar"
+                    android:layout_width="5dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="2dp"
+                    android:backgroundTint="@color/primary"
+                    android:text="comprar" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 </FrameLayout>
