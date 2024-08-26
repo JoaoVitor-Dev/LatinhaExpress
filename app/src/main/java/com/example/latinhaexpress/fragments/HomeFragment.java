@@ -1,12 +1,14 @@
 package com.example.latinhaexpress.fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import android.view.*;
 import android.widget.Button;
+import android.widget.Toast;
 import android.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -20,6 +22,7 @@ import androidx.room.Room;
 import com.example.latinhaexpress.R;
 import com.example.latinhaexpress.dao.AllDao;
 import com.example.latinhaexpress.database.MyDatabase;
+import com.example.latinhaexpress.dialog.MyDialog;
 import com.example.latinhaexpress.entities.Caixa;
 import com.example.latinhaexpress.entities.Usuario;
 
@@ -73,9 +76,48 @@ public class HomeFragment extends Fragment
             {
                 if(caixa == null)
                 {
-                    abrirCaixa();
-                }else{
-                    fecharCaixa();
+                    FragmentManager fragmentManager = getParentFragmentManager();
+                    MyDialog dialog = MyDialog.newInstance("Aviso", "Deseja abrir um novo Caixa?");
+
+                    dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            abrirCaixa();
+                        }
+                    });
+                    dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            Toast.makeText(getContext(), "Operação cancelada!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    dialog.show(fragmentManager, "MyDialog");
+
+                }else
+                {
+                    FragmentManager fragmentManager = getParentFragmentManager();
+                    MyDialog dialog = MyDialog.newInstance("Aviso", "Deseja realmente fechar o Caixa?");
+
+                    dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            fecharCaixa();
+                        }
+                    });
+
+                    dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            Toast.makeText(getContext(), "Operação cancelada!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    dialog.show(fragmentManager, "MyDialog");
                 }
             }
         });
@@ -178,6 +220,8 @@ public class HomeFragment extends Fragment
         statuscaixa.setTextColor(Color.GREEN);
 
         btnCaixa.setText("Fechar caixa");
+
+        Toast.makeText(getContext(), "Caixa aberto com sucesso!", Toast.LENGTH_SHORT).show();
     }
 
     private void fecharCaixa()
@@ -189,9 +233,12 @@ public class HomeFragment extends Fragment
         caixa = null;
 
         statuscaixa.setText("Caixa fechado");
+
         statuscaixa.setTextColor(Color.RED);
 
         btnCaixa.setText("Abrir caixa");
+
+        Toast.makeText(getContext(), "Caixa fechado com sucesso!", Toast.LENGTH_SHORT).show();
     }
 
 
