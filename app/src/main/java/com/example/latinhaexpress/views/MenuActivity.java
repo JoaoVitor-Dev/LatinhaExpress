@@ -1,14 +1,17 @@
 package com.example.latinhaexpress.views;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
-import androidx.appcompat.widget.Toolbar;
+import android.widget.*;
+
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -33,7 +36,7 @@ public class MenuActivity extends AppCompatActivity
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        
+
         montaToolbar();
 
         Intent it = getIntent();
@@ -42,23 +45,8 @@ public class MenuActivity extends AppCompatActivity
 
         if (savedInstanceState == null)
         {
-           HomeFragment homeFragment = new HomeFragment();
-
-           homeFragment.usuarioLogado = usuarioLogado;
-
-           FragmentManager fragmentManager = getSupportFragmentManager();
-           FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-           fragmentTransaction.add(R.id.fragment_container, homeFragment);
-           fragmentTransaction.commit();
+            fragmentHome();
         }
-    }
-
-    private void montaToolbar()
-    {
-        Toolbar toolbar = findViewById(R.id.toolbar_menu);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Latinha Express");
     }
 
     @Override
@@ -68,12 +56,21 @@ public class MenuActivity extends AppCompatActivity
         return true;
     }
 
+    private void montaToolbar()
+    {
+        Toolbar toolbar = findViewById(R.id.toolbar_menu);
+        setSupportActionBar(toolbar);
+       // getSupportActionBar().setTitle("Latinha Express");
+        toolbar.setTitleTextColor(Color.WHITE);
+        //getSupportActionBar().setDisplayShowCustomEnabled(true);
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item)
     {
-        if (item.getTitle().equals("Principal"))
+        if (item.getTitle().equals("Serviços"))
         {
-
+            fragmentHome();
         } else if (item.getTitle().equals("Caixas"))
         {
 
@@ -83,11 +80,21 @@ public class MenuActivity extends AppCompatActivity
         } else if (item.getTitle().equals("Vendas"))
         {
 
-        } else if (item.getTitle().equals("Sair"))
-        {
-            finishAffinity();
         }
 
         return true;
+    }
+
+    private void fragmentHome()
+    {
+        HomeFragment homeFragment = new HomeFragment();
+
+        homeFragment.usuarioLogado = usuarioLogado;
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.add(R.id.fragment_container, homeFragment);
+        fragmentTransaction.commit();
     }
 }

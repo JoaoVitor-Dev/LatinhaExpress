@@ -9,12 +9,4 @@
         app:collapseIcon="@android:drawable/ic_dialog_info">
 
 
-<!--    <ImageView-->
-<!--            android:id="@+id/imageView2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_marginRight="3dp"-->
-<!--            android:layout_gravity="right"-->
-<!--            android:src="@drawable/menu_lateral" />-->
-
 </androidx.appcompat.widget.Toolbar>

@@ -37,16 +37,16 @@ public class ColetaFragment extends Fragment
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_coleta, container, false);
 
-        setup(view);
-
-        btnComprar.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                realizarCompra();
-            }
-        });
+//        setup(view);
+//
+//        btnComprar.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                realizarCompra();
+//            }
+//        });
 
         return view;
     }
@@ -61,8 +61,6 @@ public class ColetaFragment extends Fragment
 
         btnComprar = view.findViewById(R.id.btnComprar);
         btnCancelarColeta = view.findViewById(R.id.btnCancelarColeta);
-
-        Context appContext = getContext();
 
         db = Room.databaseBuilder(appContext, MyDatabase.class, "mydb")
                 .allowMainThreadQueries()
