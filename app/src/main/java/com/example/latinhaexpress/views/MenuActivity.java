@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.latinhaexpress.R;
 import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.fragments.HomeFragment;
+import com.example.latinhaexpress.fragments.ListaCaixaFragment;
 
 public class MenuActivity extends AppCompatActivity
 {
@@ -73,7 +74,7 @@ public class MenuActivity extends AppCompatActivity
             fragmentHome();
         } else if (item.getTitle().equals("Caixas"))
         {
-
+            fragmentListaCaixas();
         } else if (item.getTitle().equals("Coletas"))
         {
 
@@ -95,6 +96,25 @@ public class MenuActivity extends AppCompatActivity
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         fragmentTransaction.add(R.id.fragment_container, homeFragment);
+
+        fragmentTransaction.addToBackStack(null);
+
+        fragmentTransaction.commit();
+    }
+
+    private void fragmentListaCaixas()
+    {
+        ListaCaixaFragment listaCaixaFragment = new ListaCaixaFragment();
+
+        listaCaixaFragment.usuario = usuarioLogado;
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.fragment_container, listaCaixaFragment);
+
+        fragmentTransaction.addToBackStack(null);
+
         fragmentTransaction.commit();
     }
 }

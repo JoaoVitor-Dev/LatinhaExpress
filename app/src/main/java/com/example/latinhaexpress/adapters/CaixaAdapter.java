@@ -25,8 +25,6 @@ public class CaixaAdapter extends RecyclerView.Adapter<CaixaAdapter.MyViewHolder
         this.context = context;
     }
 
-
-
     @NonNull
     @Override
     public CaixaAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)

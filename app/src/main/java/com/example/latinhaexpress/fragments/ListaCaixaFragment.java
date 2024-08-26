@@ -20,7 +20,7 @@ public class ListaCaixaFragment extends Fragment
     private MyDatabase db;
     private AllDao allDao;
     private CaixaAdapter caixaAdapter;
-    private Usuario usuario;
+    public Usuario usuario;
     private Context appContext;
     private RecyclerView rcListCaixas;
 
@@ -39,7 +39,6 @@ public class ListaCaixaFragment extends Fragment
     private void carregaListaCaixas()
     {
         caixaAdapter = new CaixaAdapter(allDao.caixas(usuario.usuario_id), appContext);
-
         rcListCaixas.setAdapter(caixaAdapter);
     }
 
