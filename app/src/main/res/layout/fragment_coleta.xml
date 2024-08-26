@@ -10,35 +10,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/toolbar"
-            android:id="@+id/include"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:fillViewport="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
                     android:layout_marginTop="50dp"
                     android:paddingStart="32dp"
                     android:paddingEnd="32dp"
-                android:orientation="vertical">
+                    android:orientation="vertical">
 
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nome do Vendedor:"
-                        />
+                        android:text="Nome do Vendedor:" />
 
                 <EditText
                         android:id="@+id/edtNome"
@@ -46,18 +39,16 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_edits"
                         android:padding="16dp"
-                        android:hint="nome do vendedor"
-                        />
+                        android:hint="nome do vendedor" />
 
                 <TextView
                         android:layout_marginTop="25dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Quantidade KG:"
-                        />
+                        android:text="Quantidade KG:" />
 
 
-                    <EditText
+                <EditText
                         android:id="@+id/edtQtde"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -72,8 +63,7 @@
                         android:layout_marginTop="25dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Preço por KG:"
-                        />
+                        android:text="Preço por KG:" />
 
                 <EditText
                         android:id="@+id/edtValor"
@@ -82,16 +72,14 @@
                         android:background="@drawable/bg_edits"
                         android:padding="16dp"
                         android:hint="R$ 0,00"
-                        android:inputType="numberDecimal"
-                        />
+                        android:inputType="numberDecimal" />
 
                 <TextView
                         android:layout_marginTop="25dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="numberDecimal"
-                        android:text="Observação:"
-                        />
+                        android:text="Observação:" />
 
                 <EditText
                         android:id="@+id/edtObs"
@@ -99,8 +87,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_edits"
                         android:padding="16dp"
-                        android:hint="observação"
-                        />
+                        android:hint="observação" />
 
                 <LinearLayout
                         android:layout_marginTop="16dp"
@@ -118,7 +105,7 @@
                             android:onClick="clicar"
                             android:text="Cancelar"
                             android:layout_marginRight="2dp"
-                            style="@style/Widget.MaterialComponents.Button"/>
+                            style="@style/Widget.MaterialComponents.Button" />
 
                     <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnComprar"
@@ -131,12 +118,8 @@
                             android:backgroundTint="@color/primary"
                             android:text="comprar"
 
-                            style="@style/Widget.MaterialComponents.Button"
-                            />
+                            style="@style/Widget.MaterialComponents.Button" />
                 </LinearLayout>
-
-
-
 
 
             </LinearLayout>

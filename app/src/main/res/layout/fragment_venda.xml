@@ -10,20 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/toolbar"
-            android:id="@+id/include"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:fillViewport="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -35,59 +29,48 @@
                     android:orientation="vertical">
 
 
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nome da Recicladora:" />
 
+                <EditText
+                        android:id="@+id/edtNome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edits"
+                        android:padding="16dp"
+                        android:hint="reclidadora" />
 
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Nome da Recicladora:"
-                            />
+                <TextView
+                        android:layout_marginTop="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quantidade(Tonelada):" />
 
-                    <EditText
-                            android:id="@+id/edtNome"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_edits"
-                            android:padding="16dp"
-                            android:hint="reclidadora"
-                            />
+                <EditText
+                        android:id="@+id/edtQtde"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edits"
+                        android:padding="16dp"
+                        android:hint="0,00"
+                        android:inputType="numberDecimal" />
 
-                    <TextView
-                            android:layout_marginTop="25dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Quantidade(Tonelada):"
-                            />
+                <TextView
+                        android:layout_marginTop="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Preço por tonelada:" />
 
-                    <EditText
-                            android:id="@+id/edtQtde"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_edits"
-                            android:padding="16dp"
-                            android:hint="0,00"
-                            android:inputType="numberDecimal"
-                            />
-
-                    <TextView
-                            android:layout_marginTop="25dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Preço por tonelada:"
-                            />
-
-                    <EditText
-                            android:id="@+id/edtValor"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_edits"
-                            android:padding="16dp"
-                            android:inputType="numberDecimal"
-                            android:hint="R$ 0,00"
-                            />
-
-
-
+                <EditText
+                        android:id="@+id/edtValor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edits"
+                        android:padding="16dp"
+                        android:inputType="numberDecimal"
+                        android:hint="R$ 0,00" />
 
 
                 <LinearLayout
@@ -106,7 +89,7 @@
                             android:onClick="clicar"
                             android:text="Cancelar"
                             android:layout_marginRight="2dp"
-                            style="@style/Widget.MaterialComponents.Button"/>
+                            style="@style/Widget.MaterialComponents.Button" />
 
                     <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnVender"
@@ -123,10 +106,6 @@
 
 
             </LinearLayout>
-
-
-
-
 
 
         </ScrollView>

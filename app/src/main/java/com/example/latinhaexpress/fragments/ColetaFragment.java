@@ -54,7 +54,6 @@ public class ColetaFragment extends Fragment
     private void setup(View view)
     {
         appContext = getContext();
-
         edtNome = view.findViewById(R.id.edtNome);
         edtQtde = view.findViewById(R.id.edtQtde);
         edtValor = view.findViewById(R.id.edtValor);
@@ -62,9 +61,6 @@ public class ColetaFragment extends Fragment
 
         btnComprar = view.findViewById(R.id.btnComprar);
         btnCancelarColeta = view.findViewById(R.id.btnCancelarColeta);
-
-        TextView text_toolbar = view.findViewById(R.id.text_toolbar);
-        text_toolbar.setText("Nova Coleta");
 
         Context appContext = getContext();
 

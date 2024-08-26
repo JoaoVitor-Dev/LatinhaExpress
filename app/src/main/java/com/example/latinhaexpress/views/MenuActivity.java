@@ -4,12 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +14,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.example.latinhaexpress.R;
 import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.fragments.HomeFragment;
@@ -39,7 +34,7 @@ public class MenuActivity extends AppCompatActivity
             return insets;
         });
         
-       // montaToolbar();
+        montaToolbar();
 
         Intent it = getIntent();
 
@@ -51,17 +46,19 @@ public class MenuActivity extends AppCompatActivity
 
            homeFragment.usuarioLogado = usuarioLogado;
 
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+           FragmentManager fragmentManager = getSupportFragmentManager();
+           FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            fragmentTransaction.add(R.id.fragment_container, homeFragment);
-            fragmentTransaction.commit();
+           fragmentTransaction.add(R.id.fragment_container, homeFragment);
+           fragmentTransaction.commit();
         }
     }
 
     private void montaToolbar()
     {
-        Toolbar myToolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_menu);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Latinha Express");
     }
 
     @Override
@@ -71,26 +68,26 @@ public class MenuActivity extends AppCompatActivity
         return true;
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item)
-//    {
-//        if (item.getTitle().equals("Principal"))
-//        {
-//
-//        } else if (item.getTitle().equals("Caixas"))
-//        {
-//
-//        } else if (item.getTitle().equals("Coletas"))
-//        {
-//
-//        } else if (item.getTitle().equals("Vendas"))
-//        {
-//
-//        } else if (item.getTitle().equals("Sair"))
-//        {
-//            finishAffinity();
-//        }
-//
-//        return true;
-//    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        if (item.getTitle().equals("Principal"))
+        {
+
+        } else if (item.getTitle().equals("Caixas"))
+        {
+
+        } else if (item.getTitle().equals("Coletas"))
+        {
+
+        } else if (item.getTitle().equals("Vendas"))
+        {
+
+        } else if (item.getTitle().equals("Sair"))
+        {
+            finishAffinity();
+        }
+
+        return true;
+    }
 }

@@ -45,8 +45,6 @@ public class ListaCaixaFragment extends Fragment
 
     private void setup(View view)
     {
-        TextView text_toolbar = view.findViewById(R.id.text_toolbar);
-        text_toolbar.setText("Lista de Caixas");
         rcListCaixas = view.findViewById(R.id.rcListaCaixas);
 
         appContext = getContext();

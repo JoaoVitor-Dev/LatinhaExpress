@@ -23,7 +23,6 @@ import com.example.latinhaexpress.entities.Venda;
 
 public class VendaFragment extends Fragment
 {
-
     private Button btnVender;
     private EditText edtValor, edtQtde, edtNome;
     private Context appContext;
@@ -60,9 +59,6 @@ public class VendaFragment extends Fragment
         edtNome = view.findViewById(R.id.edtNome);
         edtQtde = view.findViewById(R.id.edtQtde);
         edtValor = view.findViewById(R.id.edtValor);
-
-        TextView text_toolbar = view.findViewById(R.id.text_toolbar);
-        text_toolbar.setText("Nova Venda");
 
         db = Room.databaseBuilder(appContext, MyDatabase.class, "mydb")
                 .allowMainThreadQueries()
