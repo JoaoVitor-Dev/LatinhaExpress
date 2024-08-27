@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="8dp"
         app:cardElevation="5dp"
-        app:cardCornerRadius="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:cardCornerRadius="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +28,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal">
@@ -39,31 +37,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
-
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Número:"
-                        android:layout_weight="1"
-                        android:textSize="15dp"
-                        />
+                        android:textSize="15sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Co2 reduzido:"
-                        android:textColor="@color/gray"
-                        />
-
+                        android:textColor="@color/gray"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
-
                     android:orientation="vertical">
 
                     <TextView
@@ -71,23 +63,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="01"
-                        android:layout_weight="1"
-                        android:textSize="15dp"
-                        />
+                        android:textSize="15sp"/>
 
                     <TextView
                         android:id="@+id/totalCo2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0,0"
-                        android:textColor="@color/gray"
-                        />
-
+                        android:textColor="@color/gray"/>
                 </LinearLayout>
 
             </LinearLayout>
-
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -99,11 +85,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Coletas:"
-                    android:layout_weight="1"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    />
+                    android:textColor="@color/primary"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -111,10 +95,7 @@
                     android:text="Vendas:"
                     android:textStyle="bold"
                     android:textColor="@color/green"
-                    android:textSize="15dp"
-                    />
-
-
+                    android:textSize="15sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -128,26 +109,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0,00"
-                    android:layout_weight="1"
-                    android:textSize="15dp"
-                    />
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/totalVenda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0,00"
-                    android:textSize="15dp"
-                    />
-
+                    android:textSize="15sp"/>
             </LinearLayout>
-
 
         </LinearLayout>
 
-
-
-
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

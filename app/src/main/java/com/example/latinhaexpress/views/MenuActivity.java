@@ -22,6 +22,7 @@ import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.fragments.HomeFragment;
 import com.example.latinhaexpress.fragments.ListVendaFragment;
 import com.example.latinhaexpress.fragments.ListaCaixaFragment;
+import com.example.latinhaexpress.fragments.ListaColetaFragment;
 
 public class MenuActivity extends AppCompatActivity
 {
@@ -78,7 +79,7 @@ public class MenuActivity extends AppCompatActivity
             fragmentListaCaixas();
         } else if (item.getTitle().equals("Coletas"))
         {
-
+            fragmentListColetas();
         } else if (item.getTitle().equals("Vendas"))
         {
             fragmentListVendas();
@@ -131,5 +132,20 @@ public class MenuActivity extends AppCompatActivity
         fragmentTransaction.addToBackStack(null);
 
         fragmentTransaction.commit();
+    }
+
+    private void fragmentListColetas()
+    {
+        ListaColetaFragment listaColetaFragment = new ListaColetaFragment();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.fragment_container, listaColetaFragment);
+
+        fragmentTransaction.addToBackStack(null);
+
+        fragmentTransaction.commit();
+
     }
 }

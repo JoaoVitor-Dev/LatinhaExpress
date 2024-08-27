@@ -52,4 +52,7 @@ public interface AllDao
 
     @Query("SELECT * FROM _venda")
     List<Venda> vendas();
+
+    @Query("SELECT * FROM _coleta")
+    List<Coleta> coletas();
 }

@@ -126,7 +126,7 @@ public class ColetaFragment extends Fragment
                @Override
                public void onClick(DialogInterface dialog, int which)
                {
-                   novaColeta(nome, qtde, valor);
+                   novaColeta(nome, qtde, valor, obs);
                }
            });
            dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
@@ -141,7 +141,7 @@ public class ColetaFragment extends Fragment
        }
     }
 
-    private void novaColeta(String nome, String qtde, String valor)
+    private void novaColeta(String nome, String qtde, String valor, String obs)
     {
         Coleta coleta = new Coleta();
 
@@ -149,6 +149,7 @@ public class ColetaFragment extends Fragment
         coleta.coleta_vendedor_nome = nome;
         coleta.coleta_qtde = Double.parseDouble(qtde);
         coleta.coleta_preco = Double.parseDouble(valor);
+        coleta.coleta_obs = obs;
 
         allDao.insert_coleta(coleta);
 

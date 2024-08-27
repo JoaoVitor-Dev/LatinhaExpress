@@ -32,12 +32,12 @@ public class Coleta
     public Double coleta_preco;
 
     @ColumnInfo(name = "coleta_obs")
-    public Double coleta_obs;
+    public String coleta_obs;
 
     public Coleta(){}
 
     @Ignore
-    public Coleta(Long caixa_id, String coleta_vendedor_nome, Double coleta_qtde, Double coleta_preco, Double coleta_obs)
+    public Coleta(Long caixa_id, String coleta_vendedor_nome, Double coleta_qtde, Double coleta_preco, String coleta_obs)
     {
         this.caixa_id = caixa_id;
         this.coleta_vendedor_nome = coleta_vendedor_nome;

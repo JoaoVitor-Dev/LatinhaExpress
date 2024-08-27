@@ -41,10 +41,10 @@ public class ListVendaFragment extends Fragment
 
     private void setup(View view)
     {
-        rcListVendas = view.findViewById(R.id.rcListaVendas);
-        rcListVendas.setLayoutManager(new LinearLayoutManager(getContext()));
-
         appContext = getContext();
+
+        rcListVendas = view.findViewById(R.id.rcListaVendas);
+        rcListVendas.setLayoutManager(new LinearLayoutManager(appContext));
 
         db = Room.databaseBuilder(appContext, MyDatabase.class, "mydb")
                 .allowMainThreadQueries()
