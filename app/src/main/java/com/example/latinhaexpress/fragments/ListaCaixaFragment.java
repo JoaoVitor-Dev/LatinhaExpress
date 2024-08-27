@@ -6,13 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import com.example.latinhaexpress.R;
 import com.example.latinhaexpress.adapters.CaixaAdapter;
 import com.example.latinhaexpress.dao.AllDao;
 import com.example.latinhaexpress.database.MyDatabase;
+import com.example.latinhaexpress.entities.Caixa;
 import com.example.latinhaexpress.entities.Usuario;
+
+import java.util.List;
 
 
 public class ListaCaixaFragment extends Fragment
@@ -38,14 +44,22 @@ public class ListaCaixaFragment extends Fragment
 
     private void carregaListaCaixas()
     {
-        caixaAdapter = new CaixaAdapter(allDao.caixas(), getContext());
+        List<Caixa> caixaList = allDao.caixas();
 
-        rcListCaixas.setAdapter(caixaAdapter);
+        if(!caixaList.isEmpty())
+        {
+            caixaAdapter = new CaixaAdapter(caixaList, getContext());
+
+            rcListCaixas.setAdapter(caixaAdapter);
+        }else {
+            Toast.makeText(getContext(), "Nenhum caixa encontrado!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void setup(View view)
     {
         rcListCaixas = view.findViewById(R.id.rcListaCaixas);
+        rcListCaixas.setLayoutManager(new LinearLayoutManager(getContext()));
 
         appContext = getContext();
 
