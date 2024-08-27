@@ -6,12 +6,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import com.example.latinhaexpress.R;
 import com.example.latinhaexpress.adapters.VendaAdapter;
 import com.example.latinhaexpress.dao.AllDao;
 import com.example.latinhaexpress.database.MyDatabase;
+import com.example.latinhaexpress.entities.Venda;
+
+import java.util.List;
 
 
 public class ListVendaFragment extends Fragment
@@ -29,12 +34,15 @@ public class ListVendaFragment extends Fragment
 
         setup(view);
 
+        carregaListaVendas();
+
         return view;
     }
 
     private void setup(View view)
     {
         rcListVendas = view.findViewById(R.id.rcListaVendas);
+        rcListVendas.setLayoutManager(new LinearLayoutManager(getContext()));
 
         appContext = getContext();
 
@@ -47,7 +55,9 @@ public class ListVendaFragment extends Fragment
 
     private void carregaListaVendas()
     {
-        adapter = new VendaAdapter(allDao.vendas(), appContext);
+        List<Venda> vendas = allDao.vendas();
+
+        adapter = new VendaAdapter(vendas, appContext);
 
         rcListVendas.setAdapter(adapter);
     }

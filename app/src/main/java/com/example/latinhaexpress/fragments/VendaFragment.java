@@ -22,6 +22,7 @@ import com.example.latinhaexpress.dao.AllDao;
 import com.example.latinhaexpress.database.MyDatabase;
 import com.example.latinhaexpress.dialog.MyDialog;
 import com.example.latinhaexpress.entities.Caixa;
+import com.example.latinhaexpress.entities.Co2;
 import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.entities.Venda;
 
@@ -150,6 +151,7 @@ public class VendaFragment extends Fragment
         venda.venda_recicladora_nome = nome;
         venda.venda_qtde = Double.parseDouble(qtde);
         venda.venda_preco_total = Double.parseDouble(valor);
+        venda.venda_qtde_co2 = Co2.calcularReducao(venda.venda_qtde);
 
         venda.caixa_id = caixa_id;
 
