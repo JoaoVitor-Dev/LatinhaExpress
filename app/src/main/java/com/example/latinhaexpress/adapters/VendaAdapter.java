@@ -30,7 +30,7 @@ public class VendaAdapter  extends RecyclerView.Adapter<VendaAdapter.MyViewHolde
     {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_venda, parent, false);
 
-        return new VendaAdapter.MyViewHolder(itemView);
+        return new MyViewHolder(itemView);
     }
 
     @Override

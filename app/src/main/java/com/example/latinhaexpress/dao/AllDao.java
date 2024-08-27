@@ -41,11 +41,11 @@ public interface AllDao
     @Query("SELECT * FROM _usuario WHERE usuario_nome = :nome")
     Usuario usuario_por_nome(String nome);
 
-    @Query("SELECT (SUM(coleta_qtde * coleta_preco)) FROM _coleta WHERE caixa_id = :id")
-    Double total_coletas(Long id);
+    @Query("SELECT * FROM _coleta WHERE caixa_id = :id")
+    List<Coleta> total_coletas(Long id);
 
-    @Query("SELECT (SUM(venda_qtde * venda_preco_total)) FROM _venda WHERE caixa_id = :id")
-    Double total_vendas(Long id);
+    @Query("SELECT * FROM _venda WHERE caixa_id = :id")
+    List<Venda> total_vendas(Long id);
 
     @Query("SELECT * FROM _caixa")
     List<Caixa> caixas();
@@ -55,4 +55,6 @@ public interface AllDao
 
     @Query("SELECT * FROM _coleta")
     List<Coleta> coletas();
+
+
 }

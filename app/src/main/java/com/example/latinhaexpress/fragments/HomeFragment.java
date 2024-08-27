@@ -24,14 +24,18 @@ import com.example.latinhaexpress.dao.AllDao;
 import com.example.latinhaexpress.database.MyDatabase;
 import com.example.latinhaexpress.dialog.MyDialog;
 import com.example.latinhaexpress.entities.Caixa;
+import com.example.latinhaexpress.entities.Coleta;
 import com.example.latinhaexpress.entities.Usuario;
+import com.example.latinhaexpress.entities.Venda;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment
 {
     private ImageButton imgNovaColeta, imgNovaVenda;
     private MyDatabase db;
     private AllDao allDao;
-    private TextView statuscaixa, totalColetas;
+    private TextView statuscaixa, totalColetas, totalVendas, totalCo2Reduzido, saldo;
     private Long id_caixa;
     private Caixa caixa;
     public Usuario usuarioLogado;
@@ -122,7 +126,7 @@ public class HomeFragment extends Fragment
             }
         });
 
-        //setaValoresCaixa();
+        setaValoresCaixa();
 
         return view;
     }
@@ -131,7 +135,7 @@ public class HomeFragment extends Fragment
     {
         ColetaFragment coletaFragment = new ColetaFragment();
 
-        coletaFragment.caixa_id = id_caixa;
+        coletaFragment.caixa_id = caixa.caixa_id;
 
         coletaFragment.usuarioLogado = usuarioLogado;
 
@@ -153,6 +157,9 @@ public class HomeFragment extends Fragment
         statuscaixa = view.findViewById(R.id.statuscaixa);
         btnCaixa = view.findViewById(R.id.btnCaixa);
         totalColetas = view.findViewById(R.id.totalColetas);
+        totalVendas = view.findViewById(R.id.totalVendas);
+        totalCo2Reduzido = view.findViewById(R.id.totalCo2Reduzido);
+        saldo = view.findViewById(R.id.saldo);
 
         Context appContext = getContext();
 
@@ -167,7 +174,7 @@ public class HomeFragment extends Fragment
     {
         VendaFragment vendaFragment = new VendaFragment();
 
-        vendaFragment.caixa_id = id_caixa;
+        vendaFragment.caixa_id = caixa.caixa_id;
 
         vendaFragment.usuarioLogado = usuarioLogado;
 
@@ -203,9 +210,32 @@ public class HomeFragment extends Fragment
     {
         if(caixa != null)
         {
-            caixa.caixa_coletas = allDao.total_coletas(caixa.caixa_id);
+            Double total_coletas = 0.0;
+            Double total_vendas = 0.0;
+            Double total_co2 = 0.0;
 
-            //totalColetas.setText(Double.toString(caixa.caixa_coletas));
+            List<Coleta> coletas = allDao.total_coletas(caixa.caixa_id);
+            List<Venda> vendas = allDao.total_vendas(caixa.caixa_id);
+
+            for(Coleta coleta : coletas)
+            {
+                total_coletas += coleta.coleta_preco * coleta.coleta_qtde;
+            }
+
+            for (Venda venda : vendas)
+            {
+                total_vendas += venda.venda_preco_total * venda.venda_qtde;
+                total_co2 += venda.venda_qtde_co2;
+            }
+
+            caixa.caixa_coletas = total_coletas;
+            caixa.caixa_vendas = total_vendas;
+            caixa.caixa_co2_reduzido = total_co2;
+
+            totalVendas.setText(String.valueOf(caixa.caixa_vendas));
+            totalColetas.setText(String.valueOf(caixa.caixa_coletas));
+            totalCo2Reduzido.setText(String.valueOf(caixa.caixa_co2_reduzido));
+            saldo.setText(String.valueOf(caixa.caixa_vendas - caixa.caixa_coletas));
         }
     }
 
