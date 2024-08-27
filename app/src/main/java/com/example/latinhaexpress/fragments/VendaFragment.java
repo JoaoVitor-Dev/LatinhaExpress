@@ -90,7 +90,7 @@ public class VendaFragment extends Fragment
         edtNome = view.findViewById(R.id.edtNome);
         edtQtde = view.findViewById(R.id.edtQtde);
         edtValor = view.findViewById(R.id.edtValor);
-        btnCancelar = view.findViewById(R.id.btnCancelarColeta);
+        btnCancelar = view.findViewById(R.id.btnCancelarVenda);
 
         db = Room.databaseBuilder(appContext, MyDatabase.class, "mydb")
                 .allowMainThreadQueries()

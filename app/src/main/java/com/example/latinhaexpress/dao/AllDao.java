@@ -47,6 +47,9 @@ public interface AllDao
     @Query("SELECT (SUM(venda_qtde * venda_preco_total)) FROM _venda WHERE caixa_id = :id")
     Double total_vendas(Long id);
 
-    @Query("SELECT * FROM _caixa WHERE usuario_id = :id")
-    List<Caixa> caixas(Long id);
+    @Query("SELECT * FROM _caixa")
+    List<Caixa> caixas();
+
+    @Query("SELECT * FROM _venda")
+    List<Venda> vendas();
 }

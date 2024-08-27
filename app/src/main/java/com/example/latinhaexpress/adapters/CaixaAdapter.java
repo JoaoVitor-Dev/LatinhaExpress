@@ -39,7 +39,9 @@ public class CaixaAdapter extends RecyclerView.Adapter<CaixaAdapter.MyViewHolder
     {
       Caixa caixa = caixaList.get(position);
 
-      holder.numeroCaixa.setText(caixa.caixa_id.toString());
+      holder.numeroCaixa.setText(String.valueOf(caixa.caixa_id));
+      holder.totalCo2.setText("Co2");
+      holder.totalColeta.setText("100,00");
 
     }
 

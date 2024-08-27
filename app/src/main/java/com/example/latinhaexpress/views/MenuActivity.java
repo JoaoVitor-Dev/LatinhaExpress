@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.latinhaexpress.R;
 import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.fragments.HomeFragment;
+import com.example.latinhaexpress.fragments.ListVendaFragment;
 import com.example.latinhaexpress.fragments.ListaCaixaFragment;
 
 public class MenuActivity extends AppCompatActivity
@@ -80,7 +81,7 @@ public class MenuActivity extends AppCompatActivity
 
         } else if (item.getTitle().equals("Vendas"))
         {
-
+            fragmentListVendas();
         }
 
         return true;
@@ -112,6 +113,20 @@ public class MenuActivity extends AppCompatActivity
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         fragmentTransaction.replace(R.id.fragment_container, listaCaixaFragment);
+
+        fragmentTransaction.addToBackStack(null);
+
+        fragmentTransaction.commit();
+    }
+
+    private void fragmentListVendas()
+    {
+        ListVendaFragment listVendaFragment = new ListVendaFragment();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.fragment_container, listVendaFragment);
 
         fragmentTransaction.addToBackStack(null);
 
