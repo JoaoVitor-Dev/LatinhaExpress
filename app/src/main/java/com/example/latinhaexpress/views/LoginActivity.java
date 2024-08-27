@@ -3,9 +3,11 @@ package com.example.latinhaexpress.views;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
@@ -26,6 +28,8 @@ public class LoginActivity extends AppCompatActivity
     private TextView textViewCadastrar;
     private MyDatabase db;
     private AllDao allDao;
+    private ProgressBar progressBar;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,7 +49,8 @@ public class LoginActivity extends AppCompatActivity
 
         String nome = it.getStringExtra("nome_usuario");
 
-        if (nome != null && !nome.isEmpty()) {
+        if (nome != null && !nome.isEmpty())
+        {
             edtNome.setText(nome);
         }
 
@@ -77,6 +82,7 @@ public class LoginActivity extends AppCompatActivity
         edtNome = findViewById(R.id.edtNome);
         edtSenha = findViewById(R.id.edtSenha);
         textViewCadastrar = findViewById(R.id.textViewCadastrar);
+        progressBar = findViewById(R.id.progress_bar);
 
         db = Room.databaseBuilder(this, MyDatabase.class, "mydb")
                 .allowMainThreadQueries()
@@ -87,6 +93,8 @@ public class LoginActivity extends AppCompatActivity
 
     private void logar()
     {
+
+
         String nome = edtNome.getText().toString().trim().toLowerCase();
         String senha = edtSenha.getText().toString().trim().toLowerCase();
 
@@ -112,7 +120,33 @@ public class LoginActivity extends AppCompatActivity
             {
                 Intent it = new Intent(LoginActivity.this, MenuActivity.class);
                 it.putExtra("usuario", usuario);
-                startActivity(it);
+
+                progressBar.setVisibility(View.VISIBLE);
+                btnAcessar.setEnabled(false);
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(3000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        handler.post(new Runnable()
+                        {
+                            @Override
+                            public void run()
+                            {
+                                progressBar.setVisibility(View.GONE);
+                                btnAcessar.setEnabled(true);
+
+                                startActivity(it);
+                            }
+                        });
+                    }
+                }).start();
+
             }else
             {
                 Toast.makeText(this, "Usuário ou senha incorretos!", Toast.LENGTH_SHORT).show();
