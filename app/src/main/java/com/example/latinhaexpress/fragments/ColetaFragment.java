@@ -23,6 +23,7 @@ import com.example.latinhaexpress.database.MyDatabase;
 import com.example.latinhaexpress.dialog.MyDialog;
 import com.example.latinhaexpress.entities.Caixa;
 import com.example.latinhaexpress.entities.Coleta;
+import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.views.MenuActivity;
 
 public class ColetaFragment extends Fragment
@@ -33,6 +34,7 @@ public class ColetaFragment extends Fragment
     private Button btnComprar, btnCancelarColeta;
     private Context appContext;
     public Long caixa_id;
+    public Usuario usuarioLogado;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -117,33 +119,73 @@ public class ColetaFragment extends Fragment
            Toast.makeText(appContext, "Por favor, informe o Preço!", Toast.LENGTH_SHORT).show();
        }else
        {
-           Coleta coleta = new Coleta();
+           FragmentManager fragmentManager = getParentFragmentManager();
+           MyDialog dialog = MyDialog.newInstance("Aviso", "Deseja realizar uma nova coleta?");
 
-           coleta.caixa_id = caixa_id;
-           coleta.coleta_vendedor_nome = nome;
-           coleta.coleta_qtde = Double.parseDouble(qtde);
-           coleta.coleta_preco = Double.parseDouble(valor);
+           dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which)
+               {
+                   novaColeta(nome, qtde, valor);
+               }
+           });
+           dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which)
+               {
+                   Toast.makeText(appContext, "Operação cancelada!", Toast.LENGTH_SHORT).show();
+               }
+           });
 
-           allDao.insert_coleta(coleta);
-
-           Toast.makeText(appContext, "Compra realizada!", Toast.LENGTH_SHORT).show();
+           dialog.show(fragmentManager, "MyDialog");
        }
+    }
+
+    private void novaColeta(String nome, String qtde, String valor)
+    {
+        Coleta coleta = new Coleta();
+
+        coleta.caixa_id = caixa_id;
+        coleta.coleta_vendedor_nome = nome;
+        coleta.coleta_qtde = Double.parseDouble(qtde);
+        coleta.coleta_preco = Double.parseDouble(valor);
+
+        allDao.insert_coleta(coleta);
+
+        Toast.makeText(appContext, "Coleta realiza com sucesso!", Toast.LENGTH_SHORT).show();
+
+        fragmentHome();
     }
 
     private void cancelarColeta()
     {
+        Toast.makeText(appContext, "Coleta cancelada com sucesso!", Toast.LENGTH_SHORT).show();
+
+        fragmentHome();
+    }
+
+    private void limpaCampos()
+    {
+        edtNome.setText("");
+        edtQtde.setText("");
+        edtObs.setText("");
+        edtValor.setText("");
+    }
+
+    private void fragmentHome()
+    {
         HomeFragment homeFragment = new HomeFragment();
 
-        FragmentManager fragmentManager = getParentFragmentManager();
+        homeFragment.usuarioLogado = usuarioLogado;
 
+        FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         fragmentTransaction.replace(R.id.fragment_container, homeFragment);
 
         fragmentTransaction.addToBackStack(null);
 
-        Toast.makeText(appContext, "Coleta cancelada com sucesso!", Toast.LENGTH_SHORT).show();
-
         fragmentTransaction.commit();
     }
+
 }

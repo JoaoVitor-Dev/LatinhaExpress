@@ -133,6 +133,8 @@ public class HomeFragment extends Fragment
 
         coletaFragment.caixa_id = id_caixa;
 
+        coletaFragment.usuarioLogado = usuarioLogado;
+
         FragmentManager fragmentManager = getParentFragmentManager();
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -166,6 +168,8 @@ public class HomeFragment extends Fragment
         VendaFragment vendaFragment = new VendaFragment();
 
         vendaFragment.caixa_id = id_caixa;
+
+        vendaFragment.usuarioLogado = usuarioLogado;
 
         FragmentManager fragmentManager = getParentFragmentManager();
 

@@ -111,7 +111,7 @@
                     android:layout_marginLeft="2dp"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/primary"
-                    android:text="comprar" />
+                    android:text="coletar" />
         </LinearLayout>
 
 

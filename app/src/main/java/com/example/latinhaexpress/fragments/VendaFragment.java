@@ -22,6 +22,7 @@ import com.example.latinhaexpress.dao.AllDao;
 import com.example.latinhaexpress.database.MyDatabase;
 import com.example.latinhaexpress.dialog.MyDialog;
 import com.example.latinhaexpress.entities.Caixa;
+import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.entities.Venda;
 
 
@@ -33,6 +34,7 @@ public class VendaFragment extends Fragment
     private MyDatabase db;
     private AllDao allDao;
     public Long caixa_id;
+    public Usuario usuarioLogado;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -119,33 +121,64 @@ public class VendaFragment extends Fragment
             edtQtde.requestFocus();
         } else
         {
-            Venda venda = new Venda();
+            FragmentManager fragmentManager = getParentFragmentManager();
+            MyDialog dialog = MyDialog.newInstance("Aviso", "Deseja realizar uma nova Venda?");
 
-            venda.venda_recicladora_nome = nome;
-            venda.venda_qtde = Double.parseDouble(qtde);
-            venda.venda_preco_total = Double.parseDouble(valor);
+            dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    novaVenda(nome, qtde, valor);
+                }
+            });
+            dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    Toast.makeText(appContext, "Operação cancelada!", Toast.LENGTH_SHORT).show();
+                }
+            });
 
-            venda.caixa_id = caixa_id;
-
-            allDao.insert_venda(venda);
-
-            Toast.makeText(appContext, "Venda realizada com sucesso!", Toast.LENGTH_SHORT).show();
+            dialog.show(fragmentManager, "MyDialog");
         }
+    }
+
+    private void novaVenda(String nome, String qtde, String valor)
+    {
+        Venda venda = new Venda();
+
+        venda.venda_recicladora_nome = nome;
+        venda.venda_qtde = Double.parseDouble(qtde);
+        venda.venda_preco_total = Double.parseDouble(valor);
+
+        venda.caixa_id = caixa_id;
+
+        allDao.insert_venda(venda);
+
+        Toast.makeText(appContext, "Venda realizada com sucesso!", Toast.LENGTH_SHORT).show();
+
+        fragmentHome();
     }
 
     private void cancelarVenda()
     {
+        Toast.makeText(appContext, "Venda cancelada com sucesso!", Toast.LENGTH_SHORT).show();
+
+        fragmentHome();
+    }
+
+    private void fragmentHome()
+    {
         HomeFragment homeFragment = new HomeFragment();
 
-        FragmentManager fragmentManager = getParentFragmentManager();
+        homeFragment.usuarioLogado = usuarioLogado;
 
+        FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         fragmentTransaction.replace(R.id.fragment_container, homeFragment);
 
         fragmentTransaction.addToBackStack(null);
-
-        Toast.makeText(appContext, "Venda cancelada com sucesso!", Toast.LENGTH_SHORT).show();
 
         fragmentTransaction.commit();
     }
