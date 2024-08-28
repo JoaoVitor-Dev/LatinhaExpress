@@ -2,6 +2,7 @@ package com.example.latinhaexpress.views;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,6 +67,8 @@ public class MenuActivity extends AppCompatActivity
        // getSupportActionBar().setTitle("Latinha Express");
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
+
+        toolbar.getOverflowIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
     }
 
     @Override
