@@ -1,5 +1,7 @@
 package com.example.latinhaexpress.fragments;
 
+import static androidx.core.app.ActivityCompat.finishAffinity;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.ColorStateList;
@@ -27,12 +29,13 @@ import com.example.latinhaexpress.entities.Caixa;
 import com.example.latinhaexpress.entities.Coleta;
 import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.entities.Venda;
+import com.example.latinhaexpress.views.MainActivity;
 
 import java.util.List;
 
 public class HomeFragment extends Fragment
 {
-    private ImageButton imgNovaColeta, imgNovaVenda;
+    private ImageButton imgNovaColeta, imgNovaVenda, imgSair;
     private MyDatabase db;
     private AllDao allDao;
     private TextView statuscaixa, totalColetas, totalVendas, totalCo2Reduzido, saldo;
@@ -70,6 +73,15 @@ public class HomeFragment extends Fragment
                 {
                     novaVenda();
                 }
+            }
+        });
+
+        imgSair.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                sair();
             }
         });
 
@@ -160,6 +172,7 @@ public class HomeFragment extends Fragment
         totalVendas = view.findViewById(R.id.totalVendas);
         totalCo2Reduzido = view.findViewById(R.id.totalCo2Reduzido);
         saldo = view.findViewById(R.id.saldo);
+        imgSair = view.findViewById(R.id.btnSair);
 
         Context appContext = getContext();
 
@@ -284,6 +297,30 @@ public class HomeFragment extends Fragment
         totalVendas.setText(String.format("%.2f", 0.0));
         totalCo2Reduzido.setText(String.format("%.2f", 0.0));
         saldo.setText(String.format("%.2f", 0.0));
+    }
+
+    private void sair()
+    {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        MyDialog dialog = MyDialog.newInstance("Aviso", "Deseja realmente sair?");
+
+        dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                //
+            }
+        });
+
+        dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Toast.makeText(getContext(), "Operação cancelada!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        dialog.show(fragmentManager, "MyDialog");
     }
 
 

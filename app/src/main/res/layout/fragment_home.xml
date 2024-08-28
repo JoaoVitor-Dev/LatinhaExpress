@@ -214,7 +214,7 @@
                                 android:id="@+id/imgNovaVenda"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/ic_new_coleta"
+                                android:src="@drawable/ic_pedido"
                                 android:backgroundTint="@color/white" />
                     </androidx.cardview.widget.CardView>
 
@@ -249,7 +249,7 @@
                                 android:id="@+id/btnSair"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/ic_new_coleta"
+                                android:src="@drawable/ic_close"
                                 android:backgroundTint="@color/white" />
                     </androidx.cardview.widget.CardView>
 
