@@ -67,6 +67,16 @@
                    android:backgroundTint="@color/primary"
                    />
 
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/btnCancelar"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="2dp"
+               android:text="cancelar"
+               style="@style/Widget.MaterialComponents.Button"
+               android:backgroundTint="@color/red"
+               />
+
 
        </LinearLayout>
 

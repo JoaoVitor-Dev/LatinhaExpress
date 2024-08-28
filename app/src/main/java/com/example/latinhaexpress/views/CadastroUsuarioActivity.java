@@ -21,7 +21,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity
 {
     private MyDatabase db;
     private AllDao allDao;
-    private Button btnCadastrar;
+    private Button btnCadastrar, btnCancelar;
     private EditText edtNome, edtSenha;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,6 +45,15 @@ public class CadastroUsuarioActivity extends AppCompatActivity
                 cadastrarUsuario();
             }
         });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(CadastroUsuarioActivity.this, LoginActivity.class));
+            }
+        });
     }
 
     private void setup()
@@ -53,6 +62,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity
         text_toolbar.setText("Cadastro de usuário");
 
         btnCadastrar = findViewById(R.id.btnCadastrar);
+        btnCancelar = findViewById(R.id.btnCancelar);
         edtNome = findViewById(R.id.edtNome);
         edtSenha = findViewById(R.id.edtSenha);
 
