@@ -40,7 +40,8 @@ public class VendaAdapter  extends RecyclerView.Adapter<VendaAdapter.MyViewHolde
 
         holder.recicladora.setText(venda.venda_recicladora_nome.toString());
         holder.qtde.setText(String.format("%.2f", venda.venda_qtde));
-        holder.co2.setText(String.format("%.2f",venda.venda_qtde_co2));
+        holder.co2.setText(String.format("%.2f",venda.venda_qtde_co2) + "T");
+        holder.precoVenda.setText(String.format("%.2f", venda.venda_preco_total));
         holder.total.setText(String.format("%.2f", venda.venda_preco_total * venda.venda_qtde));
     }
 
@@ -52,7 +53,7 @@ public class VendaAdapter  extends RecyclerView.Adapter<VendaAdapter.MyViewHolde
 
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView recicladora, co2, qtde, total;
+        TextView recicladora, co2, qtde, total, precoVenda;
 
         public MyViewHolder(@NonNull View itemView)
         {
@@ -61,6 +62,7 @@ public class VendaAdapter  extends RecyclerView.Adapter<VendaAdapter.MyViewHolde
             co2 = itemView.findViewById(R.id.totalCo2);
             qtde = itemView.findViewById(R.id.qtde);
             total = itemView.findViewById(R.id.totalVenda);
+            precoVenda = itemView.findViewById(R.id.precoVenda);
         }
     }
 }

@@ -61,6 +61,9 @@ public class HomeFragment extends Fragment
             {
                 if(caixa != null){
                     novaColeta();
+                }else
+                {
+                    Toast.makeText(getContext(), "Por favor, abra um novo Caixa!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -73,6 +76,9 @@ public class HomeFragment extends Fragment
                 if(caixa != null)
                 {
                     novaVenda();
+                }else
+                {
+                    Toast.makeText(getContext(), "Por favor, abra um novo Caixa!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -55,6 +55,8 @@
                         android:textColor="@color/gray"
                         />
 
+
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -93,6 +95,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Preço R$:"
+                    android:textColor="@color/primary"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Qtde:"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -117,12 +126,22 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/precoUN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0,00"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
                     android:id="@+id/qtde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0,00"
                     android:textSize="15sp"
                     />
+
+
 
                 <TextView
                     android:id="@+id/totalColeta"

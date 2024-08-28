@@ -44,6 +44,7 @@ public class ColetaAdapter extends RecyclerView.Adapter<ColetaAdapter.MyViewHold
         holder.vendedor.setText(coleta.coleta_vendedor_nome.toString());
         holder.obs.setText(coleta.coleta_obs.toString());
         holder.qtde.setText(String.format("%.2f", coleta.coleta_qtde));
+        holder.precoUN.setText(String.format("%.2f", coleta.coleta_preco));
         holder.valor.setText(String.format("%.2f", coleta.coleta_preco * coleta.coleta_qtde));
     }
 
@@ -55,7 +56,7 @@ public class ColetaAdapter extends RecyclerView.Adapter<ColetaAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView vendedor, qtde, valor, obs;
+        TextView vendedor, qtde, valor, obs, precoUN;
 
         public MyViewHolder(@NonNull View itemView)
         {
@@ -65,6 +66,7 @@ public class ColetaAdapter extends RecyclerView.Adapter<ColetaAdapter.MyViewHold
             qtde = itemView.findViewById(R.id.qtde);
             valor = itemView.findViewById(R.id.totalColeta);
             obs = itemView.findViewById(R.id.obs);
+            precoUN = itemView.findViewById(R.id.precoUN);
         }
     }
 }

@@ -51,7 +51,7 @@
                         <LinearLayout
                                 android:layout_width="match_parent"
                                 android:background="@color/primary"
-                                android:layout_height="25dp"
+                                android:layout_height="12dp"
                                 android:orientation="horizontal">
 
                         </LinearLayout>
@@ -126,7 +126,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textSize="16sp"
-                                        android:text="Co2 reduzido:"
+                                        android:text="CO2 reduzido:"
                                         android:textStyle="bold" />
 
                             </LinearLayout>
@@ -156,18 +156,26 @@
 
                         </LinearLayout>
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@android:color/darker_gray"/>
+
                         <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
-                            <android.widget.Button
+                            <Button
                                     android:id="@+id/btnCaixa"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Abrir caixa"
-                                    android:textColor="@color/white"
-                                    android:backgroundTint="@color/primary" />
+                                    android:layout_marginHorizontal="8dp"
+                                    android:textColor="@color/primary"
+                                    android:backgroundTint="@color/white" />
 
 
                         </LinearLayout>
@@ -178,80 +186,98 @@
 
 
                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:orientation="horizontal"
-                        android:gravity="start"
-                        android:layout_marginTop="25dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <androidx.cardview.widget.CardView
-                            android:layout_width="60dp"
-                            android:layout_marginLeft="16dp"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
                             android:layout_marginTop="2dp"
                             android:layout_marginBottom="2dp"
-                            android:layout_height="match_parent"
-
                             app:cardCornerRadius="10dp">
 
-                        <ImageButton
+                            <ImageButton
                                 android:id="@+id/imgNovaColeta"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
                                 android:backgroundTint="@color/white"
                                 android:src="@drawable/ic_new_coleta" />
-                    </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                            android:layout_width="60dp"
-                            android:layout_marginLeft="16dp"
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Coleta" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+
                             android:layout_marginTop="2dp"
                             android:layout_marginBottom="2dp"
-                            android:layout_height="match_parent"
-
                             app:cardCornerRadius="10dp">
 
-                        <ImageButton
+                            <ImageButton
                                 android:id="@+id/imgNovaVenda"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/ic_pedido"
-                                android:backgroundTint="@color/white" />
-                    </androidx.cardview.widget.CardView>
+                                android:backgroundTint="@color/white"
+                                android:src="@drawable/ic_pedido" />>
+                        </androidx.cardview.widget.CardView>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Venda"/>
 
-                    <androidx.cardview.widget.CardView
-                            android:layout_width="60dp"
-                            android:layout_marginLeft="16dp"
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
                             android:layout_marginTop="2dp"
                             android:layout_marginBottom="2dp"
-                            android:layout_height="match_parent"
 
                             app:cardCornerRadius="10dp">
 
-                        <ImageButton
-                                android:id="@+id/btnConfig"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/ic_new_coleta"
-                                android:backgroundTint="@color/white" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                            android:layout_width="60dp"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:layout_height="match_parent"
-
-                            app:cardCornerRadius="10dp">
-
-                        <ImageButton
+                            <ImageButton
                                 android:id="@+id/btnSair"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/ic_close"
-                                android:backgroundTint="@color/white" />
-                    </androidx.cardview.widget.CardView>
+                                android:backgroundTint="@color/white"
+                                android:src="@drawable/ic_close" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sair"/>
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -259,31 +285,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:gravity="start">
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Coleta"
-                            android:layout_marginLeft="20dp" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Venda"
-                            android:layout_marginLeft="36dp" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Config"
-                            android:layout_marginLeft="36dp" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sair"
-                            android:layout_marginLeft="36dp" />
+                        android:gravity="center">
 
                 </LinearLayout>
 

@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="3dp"
@@ -50,7 +50,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Co2 reduzido:"
+                        android:text="CO2 reduzido:"
                         android:textColor="@color/gray"
                         />
 
@@ -92,6 +92,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Preço R$:"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Qtde:"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -114,6 +123,14 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="15dp"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/precoVenda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0,00"
+                    android:textSize="15sp"
+                    />
 
                 <TextView
                     android:id="@+id/qtde"
