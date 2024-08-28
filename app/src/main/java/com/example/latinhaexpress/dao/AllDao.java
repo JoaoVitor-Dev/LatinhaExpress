@@ -26,8 +26,8 @@ public interface AllDao
     @Insert
     Long insert_caixa(Caixa c);
 
-    @Query("SELECT * FROM _caixa WHERE caixa_aberto = true")
-    Caixa get_caixa_aberto();
+    @Query("SELECT * FROM _caixa WHERE caixa_aberto = true AND usuario_id = :id_usuario")
+    Caixa get_caixa_aberto(Long id_usuario);
 
     @Update
     void update_caixa(Caixa caixa);

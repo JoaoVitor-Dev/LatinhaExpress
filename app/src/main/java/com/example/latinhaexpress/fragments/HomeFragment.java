@@ -29,6 +29,7 @@ import com.example.latinhaexpress.entities.Caixa;
 import com.example.latinhaexpress.entities.Coleta;
 import com.example.latinhaexpress.entities.Usuario;
 import com.example.latinhaexpress.entities.Venda;
+import com.example.latinhaexpress.views.LoginActivity;
 import com.example.latinhaexpress.views.MainActivity;
 
 import java.util.List;
@@ -204,7 +205,7 @@ public class HomeFragment extends Fragment
 
     private void mostraStatusCaixa()
     {
-        caixa = allDao.get_caixa_aberto();
+        caixa = allDao.get_caixa_aberto(usuarioLogado.usuario_id);
 
         if(caixa == null)
         {
@@ -308,7 +309,8 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(DialogInterface dialog, int which)
             {
-                //
+                getActivity().finishAffinity();
+                System.exit(0);
             }
         });
 
