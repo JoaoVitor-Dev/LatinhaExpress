@@ -73,7 +73,7 @@ public class MenuActivity extends AppCompatActivity
     {
         if (item.getTitle().equals("Serviços"))
         {
-            fragmentHome();
+            servicos();
         } else if (item.getTitle().equals("Caixas"))
         {
             fragmentListaCaixas();
@@ -86,6 +86,22 @@ public class MenuActivity extends AppCompatActivity
         }
 
         return true;
+    }
+
+    private void servicos()
+    {
+        HomeFragment homeFragment = new HomeFragment();
+
+        homeFragment.usuarioLogado = usuarioLogado;
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.fragment_container, homeFragment);
+
+        fragmentTransaction.addToBackStack(null);
+
+        fragmentTransaction.commit();
     }
 
     private void fragmentHome()

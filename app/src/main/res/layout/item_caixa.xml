@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="8dp">
@@ -11,7 +11,9 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="3dp"
         app:cardElevation="5dp"
         app:cardCornerRadius="5dp">
 
@@ -43,6 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Número:"
+                        android:textColor="@color/black"
                         android:textSize="15sp"/>
 
                     <TextView
@@ -63,6 +66,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="01"
+                        android:textColor="@color/black"
                         android:textSize="15sp"/>
 
                     <TextView
@@ -84,7 +88,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Coletas:"
+                    android:text="Coletas R$:"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="@color/primary"/>
@@ -92,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vendas:"
+                    android:text="Vendas R$:"
                     android:textStyle="bold"
                     android:textColor="@color/green"
                     android:textSize="15sp"/>

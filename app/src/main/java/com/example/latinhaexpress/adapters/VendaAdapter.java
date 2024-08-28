@@ -39,9 +39,9 @@ public class VendaAdapter  extends RecyclerView.Adapter<VendaAdapter.MyViewHolde
         Venda venda = vendaList.get(position);
 
         holder.recicladora.setText(venda.venda_recicladora_nome.toString());
-        holder.qtde.setText(String.valueOf(venda.venda_qtde));
-        holder.co2.setText(String.valueOf(venda.venda_qtde_co2));
-        holder.total.setText(String.valueOf(venda.venda_preco_total));
+        holder.qtde.setText(String.format("%.2f", venda.venda_qtde));
+        holder.co2.setText(String.format("%.2f",venda.venda_qtde_co2));
+        holder.total.setText(String.format("%.2f", venda.venda_preco_total * venda.venda_qtde));
     }
 
     @Override

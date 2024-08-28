@@ -47,7 +47,7 @@ public interface AllDao
     @Query("SELECT * FROM _venda WHERE caixa_id = :id")
     List<Venda> total_vendas(Long id);
 
-    @Query("SELECT * FROM _caixa")
+    @Query("SELECT * FROM _caixa WHERE caixa_aberto = false")
     List<Caixa> caixas();
 
     @Query("SELECT * FROM _venda")

@@ -43,8 +43,8 @@ public class ColetaAdapter extends RecyclerView.Adapter<ColetaAdapter.MyViewHold
 
         holder.vendedor.setText(coleta.coleta_vendedor_nome.toString());
         holder.obs.setText(coleta.coleta_obs.toString());
-        holder.qtde.setText(String.valueOf(coleta.coleta_qtde));
-        holder.valor.setText(String.valueOf(coleta.coleta_preco * coleta.coleta_qtde));
+        holder.qtde.setText(String.format("%.2f", coleta.coleta_qtde));
+        holder.valor.setText(String.format("%.2f", coleta.coleta_preco * coleta.coleta_qtde));
     }
 
     @Override

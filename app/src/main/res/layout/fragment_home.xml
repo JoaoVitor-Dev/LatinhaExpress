@@ -167,7 +167,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Abrir caixa"
                                     android:textColor="@color/white"
-                                    android:backgroundTint="@color/gray" />
+                                    android:backgroundTint="@color/primary" />
 
 
                         </LinearLayout>

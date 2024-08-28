@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
@@ -38,14 +38,12 @@
         </LinearLayout>
 
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcListaColetas"
+            android:layout_marginTop="2dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             tools:listitem="@layout/item_coleta">
-
-
 
 
         </androidx.recyclerview.widget.RecyclerView>

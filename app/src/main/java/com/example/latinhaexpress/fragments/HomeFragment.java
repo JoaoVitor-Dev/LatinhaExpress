@@ -232,10 +232,11 @@ public class HomeFragment extends Fragment
             caixa.caixa_vendas = total_vendas;
             caixa.caixa_co2_reduzido = total_co2;
 
-            totalVendas.setText(String.valueOf(caixa.caixa_vendas));
-            totalColetas.setText(String.valueOf(caixa.caixa_coletas));
-            totalCo2Reduzido.setText(String.valueOf(caixa.caixa_co2_reduzido));
-            saldo.setText(String.valueOf(caixa.caixa_vendas - caixa.caixa_coletas));
+            totalVendas.setText(String.format("%.2f", caixa.caixa_vendas));
+
+            totalColetas.setText(String.format("%.2f", caixa.caixa_coletas));
+            totalCo2Reduzido.setText(String.format("%.2f", caixa.caixa_co2_reduzido));
+            saldo.setText(String.format("%.2f",caixa.caixa_vendas - caixa.caixa_coletas));
         }
     }
 
@@ -271,7 +272,18 @@ public class HomeFragment extends Fragment
 
         btnCaixa.setText("Abrir caixa");
 
+        limpaValoresCaixa();
+
         Toast.makeText(getContext(), "Caixa fechado com sucesso!", Toast.LENGTH_SHORT).show();
+    }
+
+    private void limpaValoresCaixa()
+    {
+        totalVendas.setText(String.format("%.2f", 0.0));
+        totalColetas.setText(String.format("%.2f", 0.0));
+        totalVendas.setText(String.format("%.2f", 0.0));
+        totalCo2Reduzido.setText(String.format("%.2f", 0.0));
+        saldo.setText(String.format("%.2f", 0.0));
     }
 
 
