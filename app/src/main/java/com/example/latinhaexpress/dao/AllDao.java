@@ -55,6 +55,4 @@ public interface AllDao
 
     @Query("SELECT * FROM _coleta")
     List<Coleta> coletas();
-
-
 }
