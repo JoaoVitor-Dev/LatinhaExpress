@@ -15,16 +15,16 @@ Funcionalidades
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/001" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/002" width=260/> 
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/003" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/004" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/005" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/006" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/007" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/008" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/009" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/010" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/001.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/002.png" width=260/> 
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/003.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/004.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/005.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/006.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/007.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/008.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/009.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/assets/010.png" width=260/>
 
 
 ## Tecnologias
