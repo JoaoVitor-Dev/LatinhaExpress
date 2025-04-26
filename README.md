@@ -15,16 +15,7 @@ Funcionalidades
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/001.png" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/002.png" width=260/> 
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/003.png" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/004.png" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/005.png" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/006.png" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/007.png" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/008.png" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/009.png" width=260/>
-<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/010.png" width=260/>
+<img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/001.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/002.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/003.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/004.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/005.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/006.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/007.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/008.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/009.png" width=260/><img src="https://github.com/JoaoVitor-Dev/LatinhaExpress/blob/main/assets/010.png" width=260/>
 
 
 ## Tecnologias
